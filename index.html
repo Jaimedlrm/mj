@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaime &amp; María | November 7, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background-color: #FAF8F3;
+      color: #3A3228;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── CSS Variables ─── */
+    :root {
+      --cream:      #FAF8F3;
+      --cream-dark: #F0EBE1;
+      --burgundy:   #6B2435;
+      --burgundy-lt:#8B3A4A;
+      --gold:       #B8943A;
+      --gold-lt:    #D4AE5A;
+      --charcoal:   #3A3228;
+      --mid:        #7A6A5A;
+      --light:      #C4B89A;
+    }
+
+    /* ─── Utility ─── */
+    .section { padding: 90px 24px; }
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-inner--wide { max-width: 1100px; margin: 0 auto; }
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 18px;
+    }
+    .section-title em { font-style: italic; color: var(--burgundy); }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 36px;
+    }
+    .divider--left { margin: 0 0 36px; }
+    .body-text { font-size: 1rem; color: var(--mid); line-height: 1.85; }
+
+    /* ─── Ornament ─── */
+    .ornament {
+      display: block;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--gold-lt);
+      opacity: 0.6;
+      letter-spacing: 0.1em;
+      margin: 12px 0;
+    }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    #nav.scrolled {
+      background: rgba(250, 248, 243, 0.96);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.07);
+      backdrop-filter: blur(6px);
+    }
+    .nav-monogram {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.05em;
+      transition: color 0.4s;
+    }
+    #nav.scrolled .nav-monogram { color: var(--charcoal); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+    #nav.scrolled .nav-links a { color: var(--mid); }
+    #nav.scrolled .nav-links a:hover { color: var(--burgundy); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      width: 24px; height: 1px;
+      background: #fff;
+      transition: background 0.4s;
+      display: block;
+    }
+    #nav.scrolled .nav-hamburger span { background: var(--charcoal); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(40,15,20,0.72) 0%, rgba(20,5,10,0.55) 60%, rgba(107,36,53,0.35) 100%),
+        url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1800&q=80') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 28px;
+    }
+    .hero-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+    .hero-names .ampersand {
+      display: inline-block;
+      font-size: 0.65em;
+      color: var(--gold-lt);
+      vertical-align: middle;
+      padding: 0 8px;
+    }
+    .hero-date {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-top: 22px;
+    }
+    .hero-location {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      margin-top: 6px;
+    }
+    .hero-scroll {
+      margin-top: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.35);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(0.6); }
+    }
+
+    /* ─── COUNTDOWN ─── */
+    #countdown {
+      background: var(--burgundy);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 20px;
+    }
+    .countdown-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .countdown-box { text-align: center; }
+    .countdown-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+    .countdown-unit {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+
+    /* ─── OUR STORY ─── */
+    #story { background: var(--cream); text-align: center; }
+    .story-text {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: var(--mid);
+      line-height: 1.9;
+    }
+
+    /* ─── WEDDING DETAILS ─── */
+    #details { background: var(--cream-dark); }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .detail-card {
+      text-align: center;
+      padding: 40px 28px;
+      background: var(--cream);
+      border: 1px solid rgba(184,148,58,0.18);
+      position: relative;
+    }
+    .detail-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 40px; height: 2px;
+      background: var(--gold);
+    }
+    .detail-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .detail-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .detail-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .detail-sub {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ─── SCHEDULE ─── */
+    #schedule { background: var(--cream); text-align: center; }
+    .schedule-timeline {
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .schedule-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(184,148,58,0.25);
+      transform: translateX(-50%);
+    }
+    .schedule-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .schedule-item:last-child { margin-bottom: 0; }
+    .schedule-item--right { flex-direction: row-reverse; }
+    .schedule-time {
+      flex: 1;
+      text-align: right;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--burgundy);
+    }
+    .schedule-item--right .schedule-time { text-align: left; }
+    .schedule-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--gold);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .schedule-info { flex: 1; text-align: left; }
+    .schedule-item--right .schedule-info { text-align: right; }
+    .schedule-event {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+    .schedule-desc {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-top: 2px;
+    }
+
+    /* ─── VENUE ─── */
+    #venue { background: var(--cream-dark); }
+    .venue-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .venue-image-wrap {
+      position: relative;
+    }
+    .venue-image-wrap::after {
+      content: '';
+      position: absolute;
+      top: 16px; right: -16px;
+      bottom: -16px; left: 16px;
+      border: 1px solid rgba(184,148,58,0.4);
+      z-index: -1;
+    }
+    .venue-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .venue-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #d4c4ae 0%, #c4ae98 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .venue-placeholder-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(58,50,40,0.5);
+      text-align: center;
+      padding: 24px;
+    }
+    .venue-text .eyebrow { text-align: left; }
+    .venue-text .section-title { text-align: left; }
+    .venue-text .divider { margin: 0 0 24px; }
+    .venue-address {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--burgundy);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .venue-map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold-lt);
+      padding-bottom: 2px;
+      margin-top: 12px;
+      transition: color 0.2s;
+    }
+    .venue-map-link:hover { color: var(--burgundy); border-color: var(--burgundy); }
+
+    /* ─── TRAVEL ─── */
+    #travel { background: var(--cream); text-align: center; }
+    .travel-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .travel-card {
+      padding: 32px 24px;
+      border: 1px solid rgba(184,148,58,0.2);
+      text-align: center;
+      background: var(--cream);
+    }
+    .travel-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .travel-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+    .travel-card-text { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
+
+    /* ─── FAQ ─── */
+    #faq { background: var(--cream-dark); text-align: center; }
+    .faq-list { max-width: 680px; margin: 40px auto 0; text-align: left; }
+    .faq-item { border-bottom: 1px solid rgba(184,148,58,0.2); }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      text-align: left;
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--burgundy); }
+    .faq-arrow {
+      font-size: 1rem;
+      color: var(--gold);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+
+    /* ─── RSVP ─── */
+    #rsvp {
+      background:
+        linear-gradient(160deg, rgba(40,15,20,0.85) 0%, rgba(107,36,53,0.75) 100%),
+        url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1400&q=80') center/cover no-repeat;
+      text-align: center;
+      padding: 100px 24px;
+    }
+    #rsvp .eyebrow { color: var(--gold-lt); }
+    #rsvp .section-title { color: #fff; }
+    #rsvp .divider { background: rgba(255,255,255,0.3); }
+    #rsvp .body-text { color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 40px; }
+    .rsvp-form {
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .rsvp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+    .form-group label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 13px 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      color: #fff;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold-lt); }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--burgundy); color: #fff; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .btn-rsvp {
+      padding: 16px 48px;
+      background: var(--gold);
+      border: none;
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 8px;
+      align-self: center;
+    }
+    .btn-rsvp:hover { background: var(--gold-lt); }
+    .rsvp-success {
+      display: none;
+      padding: 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #fff;
+      margin-top: 16px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal);
+      padding: 50px 24px;
+      text-align: center;
+    }
+    .footer-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 6px;
+    }
+    .footer-date {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .footer-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.15);
+      margin-bottom: 20px;
+    }
+    .footer-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .venue-inner { grid-template-columns: 1fr; gap: 40px; }
+      .venue-image-wrap::after { display: none; }
+      .rsvp-row { grid-template-columns: 1fr; }
+      .schedule-timeline::before { left: 0; transform: none; }
+      .schedule-item, .schedule-item--right { flex-direction: column; align-items: flex-start; gap: 8px; padding-left: 28px; }
+      .schedule-time, .schedule-item--right .schedule-time { text-align: left; }
+      .schedule-info, .schedule-item--right .schedule-info { text-align: left; }
+      .schedule-dot { position: absolute; left: -5px; top: 6px; }
+      .schedule-item { position: relative; }
+    }
+    @media (max-width: 480px) {
+      .section { padding: 60px 20px; }
+      #nav { padding: 14px 20px; }
+      .hero-names { font-size: clamp(2.8rem, 12vw, 4rem); }
+    }
+
+    /* ─── Mobile nav overlay ─── */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(250,248,243,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    #mobile-nav.open { display: flex; }
+    #mobile-nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+    #mobile-nav a:hover { color: var(--burgundy); }
+    .mobile-nav-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--charcoal);
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav id="nav">
+    <a href="#hero" class="nav-monogram">J &amp; M</a>
+    <ul class="nav-links">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+    <button class="nav-hamburger" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div id="mobile-nav">
+    <button class="mobile-nav-close" id="closeNav">✕</button>
+    <a href="#story" class="mobile-link">Our Story</a>
+    <a href="#details" class="mobile-link">Details</a>
+    <a href="#schedule" class="mobile-link">Schedule</a>
+    <a href="#venue" class="mobile-link">Venue</a>
+    <a href="#travel" class="mobile-link">Travel</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#rsvp" class="mobile-link">RSVP</a>
+  </div>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">We are getting married</p>
+      <h1 class="hero-names">
+        Jaime
+        <span class="ampersand">&amp;</span>
+        María
+      </h1>
+      <span class="ornament">✦ ✦ ✦</span>
+      <p class="hero-date">Saturday · November 7, 2026</p>
+      <p class="hero-location">La Finca El Peregrino · Pamplona, España</p>
+      <div class="hero-scroll" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})">
+        <div class="hero-scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ COUNTDOWN ══════════════ -->
+  <div id="countdown">
+    <p class="countdown-label">Counting down to our big day</p>
+    <div class="countdown-boxes">
+      <div class="countdown-box">
+        <span class="countdown-num" id="cd-days">—</span>
+        <p class="countdown-unit">Days</p>
+      </div>
+      <div class="countdown-box">
+        <span class="countdown-num" id="cd-hours">—</span>
+        <p class="countdown-unit">Hours</p>
+      </div>
+      <div class="countdown-box">
+        <span class="countdown-num" id="cd-mins">—</span>
+        <p class="countdown-unit">Minutes</p>
+      </div>
+      <div class="countdown-box">
+        <span class="countdown-num" id="cd-secs">—</span>
+        <p class="countdown-unit">Seconds</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ OUR STORY ══════════════ -->
+  <section id="story" class="section">
+    <div class="section-inner">
+      <p class="eyebrow" style="text-align:center">Our Story</p>
+      <h2 class="section-title" style="text-align:center">
+        A love story worth <em>celebrating</em>
+      </h2>
+      <div class="divider"></div>
+      <p class="story-text">
+        Some stories begin quietly, with a glance across a room, a shared laugh, or a moment neither of you planned.
+        Ours is that kind of story — ordinary days that turned into something extraordinary.
+        Through all of life's chapters, big and small, we found our way to each other.
+      </p>
+      <br />
+      <p class="story-text">
+        Now, surrounded by the people we love most, we are ready to begin the greatest chapter yet.
+        We cannot wait to celebrate this milestone with you in the beautiful heart of Navarra,
+        under the autumn skies of Pamplona.
+      </p>
+      <span class="ornament" style="margin-top:40px">— J &amp; M —</span>
+    </div>
+  </section>
+
+  <!-- ══════════════ DETAILS ══════════════ -->
+  <section id="details" class="section">
+    <div class="section-inner--wide">
+      <div style="text-align:center">
+        <p class="eyebrow">Wedding Details</p>
+        <h2 class="section-title">Save the <em>Date</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="details-grid">
+        <div class="detail-card">
+          <span class="detail-icon">💍</span>
+          <p class="detail-title">Ceremony</p>
+          <p class="detail-name">La Finca El Peregrino</p>
+          <p class="detail-sub">Saturday, November 7, 2026<br />12:00 noon<br />Pamplona, Navarra, Spain</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-icon">🥂</span>
+          <p class="detail-title">Cocktail Hour</p>
+          <p class="detail-name">Garden Terrace</p>
+          <p class="detail-sub">Following the ceremony<br />La Finca El Peregrino<br />Drinks &amp; canapés</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-icon">🎉</span>
+          <p class="detail-title">Reception</p>
+          <p class="detail-name">Grand Salon</p>
+          <p class="detail-sub">Dinner &amp; dancing from 14:00<br />La Finca El Peregrino<br />Late into the night</p>
+        </div>
+        <div class="detail-card">
+          <span class="detail-icon">👗</span>
+          <p class="detail-title">Dress Code</p>
+          <p class="detail-name">Black Tie Optional</p>
+          <p class="detail-sub">Formal attire welcome.<br />Please avoid white or ivory.<br />Heels and cobblestones — plan ahead!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SCHEDULE ══════════════ -->
+  <section id="schedule" class="section">
+    <div class="section-inner">
+      <p class="eyebrow" style="text-align:center">The Big Day</p>
+      <h2 class="section-title" style="text-align:center">Day <em>Schedule</em></h2>
+      <div class="divider"></div>
+      <div class="schedule-timeline">
+        <div class="schedule-item">
+          <div class="schedule-time">11:30</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Guests Arrive</p>
+            <p class="schedule-desc">Welcome &amp; seating at La Finca El Peregrino</p>
+          </div>
+        </div>
+        <div class="schedule-item schedule-item--right">
+          <div class="schedule-time">12:00</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Ceremony</p>
+            <p class="schedule-desc">The exchange of vows &amp; rings</p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">13:00</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Cocktail Hour</p>
+            <p class="schedule-desc">Garden terrace · Cava &amp; canapés</p>
+          </div>
+        </div>
+        <div class="schedule-item schedule-item--right">
+          <div class="schedule-time">14:30</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Wedding Luncheon</p>
+            <p class="schedule-desc">Sit-down dinner in the Grand Salon</p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">18:00</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Cake Cutting &amp; Toasts</p>
+            <p class="schedule-desc">Speeches &amp; champagne toast</p>
+          </div>
+        </div>
+        <div class="schedule-item schedule-item--right">
+          <div class="schedule-time">19:00</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Dancing &amp; Celebration</p>
+            <p class="schedule-desc">First dance, music &amp; festivities</p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">00:00</div>
+          <div class="schedule-dot"></div>
+          <div class="schedule-info">
+            <p class="schedule-event">Last Dance</p>
+            <p class="schedule-desc">A night to remember ends</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ VENUE ══════════════ -->
+  <section id="venue" class="section">
+    <div class="section-inner--wide">
+      <div class="venue-inner">
+        <div class="venue-image-wrap">
+          <!-- Placeholder — replace src with an actual photo of La Finca El Peregrino -->
+          <div class="venue-placeholder">
+            <p class="venue-placeholder-text">
+              La Finca El Peregrino<br />
+              <span style="font-size:0.85rem;opacity:0.7">Add your venue photo here</span>
+            </p>
+          </div>
+        </div>
+        <div class="venue-text">
+          <p class="eyebrow">Where We Celebrate</p>
+          <h2 class="section-title">La Finca<br /><em>El Peregrino</em></h2>
+          <div class="divider divider--left"></div>
+          <p class="venue-address">
+            La Finca El Peregrino<br />
+            Pamplona, Navarra<br />
+            España
+          </p>
+          <p class="body-text">
+            Nestled in the rolling landscapes of Navarra, La Finca El Peregrino is a stunning estate
+            that combines the rustic charm of the Spanish countryside with elegant, modern facilities.
+            The perfect backdrop for an autumn wedding celebration.
+          </p>
+          <a href="https://www.google.com/maps/search/La+Finca+El+Peregrino+Pamplona" target="_blank" class="venue-map-link">
+            ↗ &nbsp;View on Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TRAVEL ══════════════ -->
+  <section id="travel" class="section">
+    <div class="section-inner--wide">
+      <div style="text-align:center">
+        <p class="eyebrow">Getting Here</p>
+        <h2 class="section-title">Travel &amp; <em>Accommodation</em></h2>
+        <div class="divider"></div>
+        <p class="body-text" style="max-width:560px;margin:0 auto 0">
+          Pamplona (Iruña) is beautifully connected to the rest of Spain and Europe.
+          Here are a few tips to make your journey smooth.
+        </p>
+      </div>
+      <div class="travel-cards">
+        <div class="travel-card">
+          <span class="travel-icon">✈️</span>
+          <h3 class="travel-card-title">By Air</h3>
+          <p class="travel-card-text">
+            The nearest airport is <strong>Pamplona Airport (PNA)</strong>, 7 km from the city centre.
+            Bilbao (BIO) and Madrid (MAD) also offer great connections with easy onward travel.
+          </p>
+        </div>
+        <div class="travel-card">
+          <span class="travel-icon">🚂</span>
+          <h3 class="travel-card-title">By Train</h3>
+          <p class="travel-card-text">
+            Renfe connects Pamplona to Madrid, Zaragoza, and Barcelona.
+            The city's train station (<em>Pamplona-Iruña</em>) is a short taxi or bus ride from the centre.
+          </p>
+        </div>
+        <div class="travel-card">
+          <span class="travel-icon">🚗</span>
+          <h3 class="travel-card-title">By Car</h3>
+          <p class="travel-card-text">
+            Pamplona is easily accessible via the A-15 and AP-15 motorways.
+            Parking is available at the venue for guests arriving by car.
+          </p>
+        </div>
+        <div class="travel-card">
+          <span class="travel-icon">🏨</span>
+          <h3 class="travel-card-title">Where to Stay</h3>
+          <p class="travel-card-text">
+            We recommend the <strong>Pamplona Old Town</strong> area for a charming stay.
+            Hotel NH Collection, Gran Hotel La Perla, and Palacio Guendulain are all excellent choices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FAQ ══════════════ -->
+  <section id="faq" class="section">
+    <div class="section-inner">
+      <p class="eyebrow" style="text-align:center">Questions</p>
+      <h2 class="section-title" style="text-align:center">Frequently <em>Asked</em></h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Are children welcome at the wedding?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            We love your little ones, but our wedding will be an adults-only celebration.
+            We hope this gives everyone a chance to relax and enjoy the evening to the fullest.
+            We kindly ask that you arrange childcare for the day.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I take photos during the ceremony?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            We are having an unplugged ceremony and kindly ask that all phones and cameras
+            be put away while we exchange our vows. Our photographer will capture every precious
+            moment, and we'll share the photos with you afterwards. During the reception,
+            snap away to your heart's content!
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the dress code?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            The dress code is Black Tie Optional — formal attire is encouraged and welcome.
+            Ladies, please be aware that parts of the venue involve cobblestones, so
+            block heels or wedges may be more comfortable than stilettos. Please avoid wearing
+            white, ivory, or cream out of respect for the bride.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Will there be vegetarian / dietary options?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. Please indicate any dietary requirements or allergies in your RSVP
+            and we will make sure to accommodate you. The caterers are experienced with all
+            common dietary needs.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            When is the RSVP deadline?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Please RSVP by <strong>September 1, 2026</strong> so we can confirm numbers with
+            the venue and caterers. We would hate for you to miss out, so please let us know
+            as soon as possible!
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a wedding registry?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            Your presence is our greatest gift. However, if you would like to contribute
+            to our honeymoon fund or give a gift, please reach out to us directly and we'll
+            share the details. We truly appreciate your generosity.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ RSVP ══════════════ -->
+  <section id="rsvp">
+    <p class="eyebrow">Join Us</p>
+    <h2 class="section-title">RSVP</h2>
+    <div class="divider"></div>
+    <p class="body-text">
+      Kindly reply by September 1, 2026. We cannot wait to celebrate with you.
+    </p>
+    <form class="rsvp-form" id="rsvpForm" onsubmit="handleRsvp(event)">
+      <div class="rsvp-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="María" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="García" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="attending">Will you attend?</label>
+        <select id="attending" required>
+          <option value="" disabled selected>Please select…</option>
+          <option value="yes">Joyfully accepts</option>
+          <option value="no">Regretfully declines</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of Guests (including yourself)</label>
+        <select id="guests">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dietary">Dietary Requirements or Notes</label>
+        <textarea id="dietary" placeholder="Vegetarian, gluten-free, allergies…"></textarea>
+      </div>
+      <button type="submit" class="btn-rsvp">Send RSVP</button>
+    </form>
+    <div class="rsvp-success" id="rsvpSuccess">
+      Thank you — we cannot wait to celebrate with you! ✦
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <p class="footer-ornament">✦ ✦ ✦</p>
+    <p class="footer-names">Jaime &amp; María</p>
+    <p class="footer-date">7 · November · 2026 · Pamplona, España</p>
+    <p class="footer-ornament">— con amor —</p>
+    <p class="footer-note">Made with love for the people we love most.</p>
+  </footer>
+
+  <!-- ══════════════ JS ══════════════ -->
+  <script>
+    // ── Nav scroll effect ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Mobile nav ──
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobile-nav').classList.add('open');
+    });
+    document.getElementById('closeNav').addEventListener('click', () => {
+      document.getElementById('mobile-nav').classList.remove('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-nav').classList.remove('open');
+      });
+    });
+
+    // ── Countdown ──
+    function updateCountdown() {
+      const wedding = new Date('2026-11-07T12:00:00+01:00');
+      const now = new Date();
+      const diff = wedding - now;
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '0';
+        document.getElementById('cd-hours').textContent = '0';
+        document.getElementById('cd-mins').textContent = '0';
+        document.getElementById('cd-secs').textContent = '0';
+        return;
+      }
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── FAQ accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ── RSVP form ──
+    function handleRsvp(e) {
+      e.preventDefault();
+      const form = document.getElementById('rsvpForm');
+      const success = document.getElementById('rsvpSuccess');
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
