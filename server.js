@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ── Static: couple photos served at /images/* ──
 app.use('/images', express.static(path.join(__dirname, 'Images')));
 
-// ── POST /api/rsvp  →  append to rsvps.json ──
+// ── POST /api/rsvp  →  append to rsvps.json (local) or log only (Vercel) ──
 app.post('/api/rsvp', (req, res) => {
   const { firstName, lastName, email, attending, guests, dietary } = req.body;
 
@@ -32,31 +32,40 @@ app.post('/api/rsvp', (req, res) => {
     timestamp: new Date().toISOString(),
   };
 
-  const rsvpFile = path.join(__dirname, 'rsvps.json');
-  let rsvps = [];
-
-  if (fs.existsSync(rsvpFile)) {
-    try {
+  // Persist locally; on Vercel the filesystem is read-only so we just log.
+  try {
+    const rsvpFile = path.join(__dirname, 'rsvps.json');
+    let rsvps = [];
+    if (fs.existsSync(rsvpFile)) {
       rsvps = JSON.parse(fs.readFileSync(rsvpFile, 'utf8'));
-    } catch (_) {
-      rsvps = [];
     }
+    rsvps.push(entry);
+    fs.writeFileSync(rsvpFile, JSON.stringify(rsvps, null, 2));
+  } catch (_) {
+    // Read-only filesystem (e.g. Vercel) — entry is logged below.
   }
 
-  rsvps.push(entry);
-  fs.writeFileSync(rsvpFile, JSON.stringify(rsvps, null, 2));
-
-  console.log(`✉  RSVP from ${firstName} ${lastName} <${email}> — ${attending}`);
+  console.log(`✉  RSVP | ${entry.timestamp} | ${firstName} ${lastName} <${email}> | attending: ${attending} | guests: ${entry.guests}`);
   res.json({ success: true });
 });
 
-// ── GET /api/rsvps  →  view all RSVPs (admin) ──
+// ── GET /api/rsvps  →  view all RSVPs (local admin only) ──
 app.get('/api/rsvps', (req, res) => {
-  const rsvpFile = path.join(__dirname, 'rsvps.json');
-  if (!fs.existsSync(rsvpFile)) return res.json([]);
-  res.json(JSON.parse(fs.readFileSync(rsvpFile, 'utf8')));
+  try {
+    const rsvpFile = path.join(__dirname, 'rsvps.json');
+    if (!fs.existsSync(rsvpFile)) return res.json([]);
+    res.json(JSON.parse(fs.readFileSync(rsvpFile, 'utf8')));
+  } catch (_) {
+    res.json([]);
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`\n💒  Wedding website running at http://localhost:${PORT}\n`);
-});
+// ── Start server (local dev only — Vercel uses module.exports) ──
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n💒  Wedding website running at http://localhost:${PORT}\n`);
+  });
+}
+
+// Required by Vercel serverless runtime
+module.exports = app;
