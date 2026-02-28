@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP · María &amp; Jaime · 7 Noviembre 2026</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav id="nav">
+  <a href="/index.html" class="nav-logo">M &amp; J</a>
+  <ul class="nav-links">
+    <li><a href="/index.html"        data-i18n="nav.home">Inicio</a></li>
+    <li><a href="/importante.html"   data-i18n="nav.importante">Información</a></li>
+    <li><a href="/restaurantes.html" data-i18n="nav.restaurantes">Restaurantes</a></li>
+    <li><a href="/turismo.html"      data-i18n="nav.turismo">Turismo</a></li>
+    <li><a href="/rsvp.html"         class="active" data-i18n="nav.rsvp">RSVP</a></li>
+    <li><a href="/regalo.html"       data-i18n="nav.regalo">Regalo</a></li>
+    <li><a href="/finde.html"        data-i18n="nav.finde">El Finde</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burgerBtn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu">
+  <button class="mobile-close" id="menuClose">✕</button>
+  <a href="/index.html"        class="m-link" data-i18n="nav.home">Inicio</a>
+  <a href="/importante.html"   class="m-link" data-i18n="nav.importante">Información</a>
+  <a href="/restaurantes.html" class="m-link" data-i18n="nav.restaurantes">Restaurantes</a>
+  <a href="/turismo.html"      class="m-link" data-i18n="nav.turismo">Turismo</a>
+  <a href="/rsvp.html"         class="m-link active" data-i18n="nav.rsvp">RSVP</a>
+  <a href="/regalo.html"       class="m-link" data-i18n="nav.regalo">Regalo</a>
+  <a href="/finde.html"        class="m-link" data-i18n="nav.finde">El Finde</a>
+  <div class="lang-toggle lang-toggle--mobile">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__eyebrow" data-i18n="rsvp.eyebrow">Confirmación de asistencia</span>
+    <h1 class="page-hero__title" data-i18n="rsvp.title">RSVP</h1>
+    <p class="page-hero__sub" data-i18n="rsvp.sub">7 de Noviembre de 2026 · Pamplona</p>
+  </div>
+</section>
+
+<!-- ── RSVP CONTENT ──────────────────────────────────────────── -->
+<section class="section-pad" style="background: var(--cream);">
+  <div class="container">
+    <div class="rsvp-center">
+
+      <p class="reveal" data-i18n="rsvp.intro">Nos encantaría contar con vuestra presencia en uno de los días más especiales de nuestras vidas. Por favor, confirmad vuestra asistencia antes del 1 de septiembre de 2026.</p>
+
+      <!-- TODO: Replace # with actual Google Form URL when available -->
+      <a href="#" class="btn btn--primary reveal reveal-d1" data-i18n="rsvp.btn">Confirmar asistencia</a>
+
+      <!-- CONTACT SECTION -->
+      <div class="contact-phones reveal reveal-d2">
+        <div>
+          <p style="font-family:var(--ff-display); font-size:1.15rem; color:var(--text); margin-bottom:8px;" data-i18n="rsvp.contact.title">¿Tienes alguna duda?</p>
+          <p style="font-size:0.95rem; color:var(--text-mid); margin-bottom:32px;" data-i18n="rsvp.contact.desc">No dudéis en escribirnos por WhatsApp. Estaremos encantados de ayudaros.</p>
+        </div>
+        <div class="contact-phone">
+          <span class="contact-phone-label" data-i18n="footer.contact1.label">María — WhatsApp</span>
+          <a href="https://wa.me/34620000376" class="contact-phone-num">620 000 376</a>
+        </div>
+        <div class="contact-phone">
+          <span class="contact-phone-label" data-i18n="footer.contact2.label">Jaime — WhatsApp</span>
+          <a href="https://wa.me/34682898196" class="contact-phone-num">682 898 196</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-names">María &amp; Jaime</div>
+    <div class="footer-date" data-i18n="footer.date">7 · Noviembre · 2026 · Pamplona, España</div>
+    <div class="footer-contacts">
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact1.label">María — WhatsApp</span>
+        <a href="https://wa.me/34620000376" class="footer-contact-phone">620 000 376</a>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact2.label">Jaime — WhatsApp</span>
+        <a href="https://wa.me/34682898196" class="footer-contact-phone">682 898 196</a>
+      </div>
+    </div>
+    <p class="footer-note" data-i18n="footer.note">Hecho con amor para las personas que más queremos</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

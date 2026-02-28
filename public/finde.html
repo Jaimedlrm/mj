@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Finde · María &amp; Jaime · 6 &amp; 7 Noviembre 2026</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav id="nav">
+  <a href="/index.html" class="nav-logo">M &amp; J</a>
+  <ul class="nav-links">
+    <li><a href="/index.html"        data-i18n="nav.home">Inicio</a></li>
+    <li><a href="/importante.html"   data-i18n="nav.importante">Información</a></li>
+    <li><a href="/restaurantes.html" data-i18n="nav.restaurantes">Restaurantes</a></li>
+    <li><a href="/turismo.html"      data-i18n="nav.turismo">Turismo</a></li>
+    <li><a href="/rsvp.html"         data-i18n="nav.rsvp">RSVP</a></li>
+    <li><a href="/regalo.html"       data-i18n="nav.regalo">Regalo</a></li>
+    <li><a href="/finde.html"        class="active" data-i18n="nav.finde">El Finde</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burgerBtn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu">
+  <button class="mobile-close" id="menuClose">✕</button>
+  <a href="/index.html"        class="m-link" data-i18n="nav.home">Inicio</a>
+  <a href="/importante.html"   class="m-link" data-i18n="nav.importante">Información</a>
+  <a href="/restaurantes.html" class="m-link" data-i18n="nav.restaurantes">Restaurantes</a>
+  <a href="/turismo.html"      class="m-link" data-i18n="nav.turismo">Turismo</a>
+  <a href="/rsvp.html"         class="m-link" data-i18n="nav.rsvp">RSVP</a>
+  <a href="/regalo.html"       class="m-link" data-i18n="nav.regalo">Regalo</a>
+  <a href="/finde.html"        class="m-link active" data-i18n="nav.finde">El Finde</a>
+  <div class="lang-toggle lang-toggle--mobile">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__eyebrow" data-i18n="fin.eyebrow">El Programa</span>
+    <h1 class="page-hero__title" data-i18n="fin.title">El Fin de Semana</h1>
+    <p class="page-hero__sub" data-i18n="fin.sub">6 &amp; 7 de Noviembre de 2026 · Pamplona</p>
+  </div>
+</section>
+
+<!-- ── TIMELINE ──────────────────────────────────────────────── -->
+<section class="section-pad" style="background: var(--cream);">
+  <div class="container">
+
+    <p class="intro-text reveal" data-i18n="fin.intro">Hemos preparado un fin de semana lleno de momentos especiales. Aquí tienes el programa completo para que puedas organizarte.</p>
+
+    <div class="timeline-wrap">
+
+      <!-- FRIDAY -->
+      <div>
+        <span class="timeline-day-label reveal" data-i18n="fin.fri.label">Viernes 6 de Noviembre · Pre-Boda</span>
+        <div class="timeline">
+
+          <div class="tl-item reveal">
+            <span class="tl-time" data-i18n="tl.fri.1.time">17:00</span>
+            <div class="tl-event" data-i18n="tl.fri.1.event">Punto de encuentro</div>
+            <div class="tl-desc" data-i18n="tl.fri.1.desc">Nos reunimos en la Plaza del Castillo, el corazón de Pamplona.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d1">
+            <span class="tl-time" data-i18n="tl.fri.2.time">17:30</span>
+            <div class="tl-event" data-i18n="tl.fri.2.event">El Encierro de los Enamorados</div>
+            <div class="tl-desc" data-i18n="tl.fri.2.desc">Recorremos juntos el trayecto del famoso encierro: Santo Domingo → Plaza de Toros.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d2">
+            <span class="tl-time" data-i18n="tl.fri.3.time">19:00</span>
+            <div class="tl-event" data-i18n="tl.fri.3.event">Aperitivos en el casco antiguo</div>
+            <div class="tl-desc" data-i18n="tl.fri.3.desc">Vinos y pintxos por los bares del casco viejo pamplonés.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d3">
+            <span class="tl-time" data-i18n="tl.fri.4.time">21:00</span>
+            <div class="tl-event" data-i18n="tl.fri.4.event">Cena pre-boda</div>
+            <div class="tl-desc" data-i18n="tl.fri.4.desc">Cena informal juntos. Lugar por confirmar.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SATURDAY -->
+      <div>
+        <span class="timeline-day-label reveal" data-i18n="fin.sat.label">Sábado 7 de Noviembre · La Boda</span>
+        <div class="timeline">
+
+          <div class="tl-item reveal">
+            <span class="tl-time" data-i18n="tl.sat.1.time">12:00</span>
+            <div class="tl-event" data-i18n="tl.sat.1.event">Llegada de invitados</div>
+            <div class="tl-desc" data-i18n="tl.sat.1.desc">Las puertas de la iglesia se abren.</div>
+            <div class="tl-venue" data-i18n="tl.sat.1.venue">Iglesia de San Nicolás, C/ San Miguel 15</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d1">
+            <span class="tl-time" data-i18n="tl.sat.2.time">12:30</span>
+            <div class="tl-event" data-i18n="tl.sat.2.event">Ceremonia religiosa</div>
+            <div class="tl-desc" data-i18n="tl.sat.2.desc">Intercambio de votos y alianzas.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d2">
+            <span class="tl-time" data-i18n="tl.sat.3.time">13:30</span>
+            <div class="tl-event" data-i18n="tl.sat.3.event">Cóctel</div>
+            <div class="tl-desc" data-i18n="tl.sat.3.desc">Cava, canapés y primeras fotos en el exterior de la iglesia.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d3">
+            <span class="tl-time" data-i18n="tl.sat.4.time">15:00</span>
+            <div class="tl-event" data-i18n="tl.sat.4.event">Traslado en autobús</div>
+            <div class="tl-desc" data-i18n="tl.sat.4.desc">Autobús gratuito desde Pamplona a la Finca El Peregrino.</div>
+          </div>
+
+          <div class="tl-item reveal">
+            <span class="tl-time" data-i18n="tl.sat.5.time">15:30</span>
+            <div class="tl-event" data-i18n="tl.sat.5.event">Almuerzo nupcial</div>
+            <div class="tl-desc" data-i18n="tl.sat.5.desc">Gran almuerzo en los jardines y salones de la finca.</div>
+            <div class="tl-venue" data-i18n="tl.sat.5.venue">Finca El Peregrino, Puente la Reina</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d1">
+            <span class="tl-time" data-i18n="tl.sat.6.time">19:00</span>
+            <div class="tl-event" data-i18n="tl.sat.6.event">Tarta y brindis</div>
+            <div class="tl-desc" data-i18n="tl.sat.6.desc">Corte de tarta y palabras de amor.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d2">
+            <span class="tl-time" data-i18n="tl.sat.7.time">20:00</span>
+            <div class="tl-event" data-i18n="tl.sat.7.event">Baile y fiesta</div>
+            <div class="tl-desc" data-i18n="tl.sat.7.desc">¡A bailar! La pista es vuestra.</div>
+          </div>
+
+          <div class="tl-item reveal reveal-d3">
+            <span class="tl-time" data-i18n="tl.sat.8.time">00:00</span>
+            <div class="tl-event" data-i18n="tl.sat.8.event">Último baile</div>
+            <div class="tl-desc" data-i18n="tl.sat.8.desc">La noche termina, pero el recuerdo dura para siempre.</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VENUE MAPS -->
+    <div style="margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+      <div class="reveal">
+        <span class="eyebrow" style="margin-bottom:12px;">Iglesia de San Nicolás</span>
+        <iframe
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.6!2d-1.6430!3d42.8195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5096248b1be0a1%3A0xf1c27acef77b5d00!2sIglesia+de+San+Nicol%C3%A1s!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Iglesia de San Nicolás">
+        </iframe>
+        <p style="font-family:var(--ff-ui); font-size:0.75rem; color:var(--text-light); margin-top:10px; letter-spacing:0.05em;">C/ San Miguel, 15 · Pamplona</p>
+      </div>
+      <div class="reveal reveal-d1">
+        <span class="eyebrow" style="margin-bottom:12px;">Finca El Peregrino</span>
+        <iframe
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46944.6!2d-1.7800!3d42.6740!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd508ab6febd14d9%3A0x3f618dcd547f5d3d!2sPuente+la+Reina!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Finca El Peregrino">
+        </iframe>
+        <p style="font-family:var(--ff-ui); font-size:0.75rem; color:var(--text-light); margin-top:10px; letter-spacing:0.05em;">Puente la Reina · Navarra (20 km de Pamplona)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-names">María &amp; Jaime</div>
+    <div class="footer-date" data-i18n="footer.date">7 · Noviembre · 2026 · Pamplona, España</div>
+    <div class="footer-contacts">
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact1.label">María — WhatsApp</span>
+        <a href="https://wa.me/34620000376" class="footer-contact-phone">620 000 376</a>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact2.label">Jaime — WhatsApp</span>
+        <a href="https://wa.me/34682898196" class="footer-contact-phone">682 898 196</a>
+      </div>
+    </div>
+    <p class="footer-note" data-i18n="footer.note">Hecho con amor para las personas que más queremos</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

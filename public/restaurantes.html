@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurantes · María &amp; Jaime · Pamplona</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav id="nav">
+  <a href="/index.html" class="nav-logo">M &amp; J</a>
+  <ul class="nav-links">
+    <li><a href="/index.html"        data-i18n="nav.home">Inicio</a></li>
+    <li><a href="/importante.html"   data-i18n="nav.importante">Información</a></li>
+    <li><a href="/restaurantes.html" class="active" data-i18n="nav.restaurantes">Restaurantes</a></li>
+    <li><a href="/turismo.html"      data-i18n="nav.turismo">Turismo</a></li>
+    <li><a href="/rsvp.html"         data-i18n="nav.rsvp">RSVP</a></li>
+    <li><a href="/regalo.html"       data-i18n="nav.regalo">Regalo</a></li>
+    <li><a href="/finde.html"        data-i18n="nav.finde">El Finde</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burgerBtn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu">
+  <button class="mobile-close" id="menuClose">✕</button>
+  <a href="/index.html"        class="m-link" data-i18n="nav.home">Inicio</a>
+  <a href="/importante.html"   class="m-link" data-i18n="nav.importante">Información</a>
+  <a href="/restaurantes.html" class="m-link active" data-i18n="nav.restaurantes">Restaurantes</a>
+  <a href="/turismo.html"      class="m-link" data-i18n="nav.turismo">Turismo</a>
+  <a href="/rsvp.html"         class="m-link" data-i18n="nav.rsvp">RSVP</a>
+  <a href="/regalo.html"       class="m-link" data-i18n="nav.regalo">Regalo</a>
+  <a href="/finde.html"        class="m-link" data-i18n="nav.finde">El Finde</a>
+  <div class="lang-toggle lang-toggle--mobile">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__eyebrow" data-i18n="rest.eyebrow">Gastronomía</span>
+    <h1 class="page-hero__title" data-i18n="rest.title">Restaurantes</h1>
+    <p class="page-hero__sub" data-i18n="rest.sub">Los favoritos de María en Pamplona</p>
+  </div>
+</section>
+
+<!-- ── INTRO ─────────────────────────────────────────────────── -->
+<section class="section-pad" style="background: var(--cream);">
+  <div class="container">
+    <p class="intro-text reveal" data-i18n="rest.intro">Pamplona es la ciudad de María, y estos son sus rincones favoritos para pintxos y buena mesa. Una guía pequeña pero muy bien curada.</p>
+
+    <!-- RESTAURANT CARDS -->
+    <div class="cards-grid" style="margin-bottom: 80px;">
+
+      <div class="card reveal">
+        <div class="card__body">
+          <span class="card__label">Pintxos Bar · Clásico</span>
+          <h2 class="card__title">Gaucho</h2>
+          <p class="card__desc">Uno de los bares de pintxos más emblemáticos de Pamplona. Una visita obligada para quien llega a la ciudad. Sus montaditos y pinchos calientes son legendarios, y el ambiente es genuinamente pamplonés.</p>
+          <div class="card__meta">📍 C/ Espoz y Mina, 7 · Casco Antiguo</div>
+          <div class="card__meta">🕐 Lun–Sáb 9:00–23:00 · Dom 10:00–15:00</div>
+          <a href="https://maps.google.com/?q=Bar+Gaucho+Pamplona+Espoz+y+Mina" target="_blank" rel="noopener" class="card__link">Ver en Google Maps →</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-d1">
+        <div class="card__body">
+          <span class="card__label">Bar · Pintxos y Raciones</span>
+          <h2 class="card__title">Café 3</h2>
+          <p class="card__desc">Local con décadas de historia en la Calle Estafeta, en pleno corazón del encierro. Pintxos creativos, gran selección de vinos navarros y una terraza perfecta para los días de sol.</p>
+          <div class="card__meta">📍 C/ Estafeta, 32 · Casco Antiguo</div>
+          <div class="card__meta">🕐 Todos los días 8:00–24:00</div>
+          <a href="https://maps.google.com/?q=Cafe+3+Estafeta+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Google Maps →</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-d2">
+        <div class="card__body">
+          <span class="card__label">Bar Tradicional</span>
+          <h2 class="card__title">Bar Zapata</h2>
+          <p class="card__desc">Un clásico del barrio de San Nicolás. Pintxos caseros, txakoli frío y el ambiente inconfundible de los bares de toda la vida de Pamplona. Sencillo, honesto y delicioso.</p>
+          <div class="card__meta">📍 C/ San Nicolás, 31 · Casco Antiguo</div>
+          <div class="card__meta">🕐 Mar–Dom 10:00–23:00</div>
+          <a href="https://maps.google.com/?q=Bar+Zapata+San+Nicolas+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Google Maps →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="reveal">
+      <span class="eyebrow" style="text-align:center; display:block; margin-bottom:16px;" data-i18n="rest.map.title">Mapa de restaurantes</span>
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2937.5!2d-1.6435!3d42.8180!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRestaurantes+casco+antiguo+Pamplona!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa restaurantes Pamplona">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-names">María &amp; Jaime</div>
+    <div class="footer-date" data-i18n="footer.date">7 · Noviembre · 2026 · Pamplona, España</div>
+    <div class="footer-contacts">
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact1.label">María — WhatsApp</span>
+        <a href="https://wa.me/34620000376" class="footer-contact-phone">620 000 376</a>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact2.label">Jaime — WhatsApp</span>
+        <a href="https://wa.me/34682898196" class="footer-contact-phone">682 898 196</a>
+      </div>
+    </div>
+    <p class="footer-note" data-i18n="footer.note">Hecho con amor para las personas que más queremos</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

@@ -1,502 +1,617 @@
 /* =============================================================
-   MARÍA & JAIME — main.js
+   MARÍA & JAIME — main.js  (multi-page, bilingual)
    ============================================================= */
 
-// ══════════════════════════════════════
-// TRANSLATIONS
-// ══════════════════════════════════════
-const translations = {
+// ── TRANSLATIONS ────────────────────────────────────────────
+const T = {
   es: {
-    // nav
-    'nav.story':    'Nuestra Historia',
-    'nav.events':   'Eventos',
-    'nav.ceremony': 'La Ceremonia',
-    'nav.reception':'La Finca',
-    'nav.travel':   'Cómo Llegar',
-    // hero
-    'hero.pre':    'Os invitamos a nuestra boda',
-    'hero.date':   'Sábado · 7 de Noviembre de 2026',
-    'hero.loc':    'Pamplona, Navarra · España',
+    /* NAV */
+    'nav.home':         'Inicio',
+    'nav.importante':   'Información',
+    'nav.restaurantes': 'Restaurantes',
+    'nav.turismo':      'Turismo',
+    'nav.rsvp':         'RSVP',
+    'nav.regalo':       'Regalo',
+    'nav.finde':        'El Finde',
+
+    /* HERO */
+    'hero.pre':  'Os invitamos a nuestra boda',
+    'hero.date': 'Sábado · 7 de Noviembre de 2026',
+    'hero.loc':  'Pamplona, Navarra · España',
+    'hero.rsvp': 'Confirmar asistencia',
     'hero.scroll': 'Scroll',
-    // countdown
+
+    /* COUNTDOWN */
     'cd.label': 'Cuenta atrás para el gran día',
     'cd.days':  'Días',
     'cd.hours': 'Horas',
     'cd.mins':  'Minutos',
     'cd.secs':  'Segundos',
-    // invitation
-    'inv.eyebrow': 'La Invitación',
-    'inv.family1': 'Vicente de los Ríos Medina y Leticia Eva Mouvet Cañete',
-    'inv.junto':   'junto con',
-    'inv.family2': 'Rafael Francisco Cortijo Gorraiz y María Elena Rojo Barrios',
-    'inv.text':    'participan el enlace matrimonial de sus hijos y tienen el gusto de invitaros a la ceremonia religiosa que se celebrará, D.m., el sábado 7 de noviembre de 2026, a las doce y media de la mañana, en la Iglesia de San Nicolás de Pamplona, y a la celebración que tendrá lugar a continuación en la Finca El Peregrino de Puente la Reina.',
-    'inv.src':     'S.R.C. · Pamplona, 2026',
-    // story
+
+    /* INVITATION */
+    'inv.eyebrow':  'La Invitación',
+    'inv.family1':  'Vicente de los Ríos Medina y Leticia Eva Mouvet Cañete',
+    'inv.junto':    'junto con',
+    'inv.family2':  'Rafael Francisco Cortijo Gorraiz y María Elena Rojo Barrios',
+    'inv.text':     'participan el enlace matrimonial de sus hijos y tienen el gusto de invitaros a la ceremonia religiosa que se celebrará, D.m., el sábado 7 de noviembre de 2026, a las doce y media de la mañana, en la Iglesia de San Nicolás de Pamplona, y a la celebración que tendrá lugar a continuación en la Finca El Peregrino de Puente la Reina.',
+    'inv.src':      'S.R.C. · Pamplona, 2026',
+
+    /* EVENT BLOCKS */
+    'ev.pre.eyebrow':  'Viernes · 6 de Noviembre de 2026',
+    'ev.pre.title':    'El Encierro de los Enamorados',
+    'ev.pre.desc':     'El día antes de la boda os invitamos a recorrer las legendarias calles del encierro de los San Fermines. Una experiencia única para comenzar la celebración al estilo pamplonés.',
+    'ev.pre.when':     '17:00 h',
+    'ev.pre.where':    'Casco Antiguo de Pamplona',
+    'ev.pre.route':    'Santo Domingo → Plaza de Toros',
+
+    'ev.cer.eyebrow':  'Sábado · 7 de Noviembre de 2026',
+    'ev.cer.title':    'La Ceremonia',
+    'ev.cer.desc':     'La ceremonia religiosa se celebrará en la Iglesia de San Nicolás, en el corazón del casco histórico de Pamplona. Os pedimos que las puertas estén abiertas desde las 12:00 h.',
+    'ev.cer.when':     '12:30 h (puertas 12:00)',
+    'ev.cer.where':    'Iglesia de San Nicolás',
+    'ev.cer.addr':     'C/ San Miguel 15, Pamplona',
+
+    'ev.cel.eyebrow':  'Sábado · 7 de Noviembre de 2026',
+    'ev.cel.title':    'La Celebración',
+    'ev.cel.desc':     'Tras la ceremonia, nos trasladaremos en autobús a la Finca El Peregrino, en Puente la Reina, donde celebraremos el almuerzo nupcial con jardines, música y baile hasta medianoche.',
+    'ev.cel.when':     '15:30 h (llegada)',
+    'ev.cel.where':    'Finca El Peregrino',
+    'ev.cel.addr':     'Puente la Reina, Navarra (20 km)',
+
+    /* STORY */
     'story.eyebrow': 'Nuestra Historia',
     'story.title':   'Una historia de <em>amor</em>',
-    'story.p1':      'Hay historias que empiezan sin avisar — con una mirada, una risa compartida, o un momento que ninguno de los dos había planeado. La nuestra es así. De los días ordinarios que se fueron convirtiendo en algo extraordinario, de Nueva York a Pamplona, de Miami a las playas del atardecer.',
-    'story.p2':      'Ahora, rodeados de las personas que más queremos, estamos listos para empezar el capítulo más bonito. No podemos esperar a celebrarlo con vosotros en el corazón de Navarra.',
-    // events
-    'events.eyebrow': 'Dos días de celebración',
-    'events.title':   'El <em>Fin de Semana</em>',
-    'ev1.tag':   'Viernes, 6 de Noviembre de 2026 · Pre-Boda',
-    'ev1.title': 'El Encierro de los Enamorados',
-    'ev1.desc':  'El día antes de la boda os invitamos a recorrer las legendarias calles del encierro de los San Fermines. Una experiencia única para comenzar la celebración al estilo pamplonés.',
-    'ev2.tag':   'Sábado, 7 de Noviembre de 2026 · La Boda',
-    'ev2.title': 'El Gran Día',
-    'ev2.desc':  'La ceremonia se celebrará en la Iglesia de San Nicolás, en el casco antiguo de Pamplona, seguida de una gran celebración en La Finca El Peregrino, en Puente la Reina.',
-    'ev2.stop1': 'Iglesia de San Nicolás',
-    'ev2.stop2': 'Cóctel',
-    'ev2.stop3': 'La Finca El Peregrino',
-    'ev2.stop4': 'Baile hasta el amanecer',
-    // ceremony
-    'cer.eyebrow':      'La Ceremonia',
-    'cer.title':        'Iglesia de <em>San Nicolás</em>',
-    'cer.desc':         'Nos daremos el "sí quiero" en la hermosa Iglesia de San Nicolás de Bari, uno de los templos más antiguos e icónicos del casco viejo de Pamplona. Una joya románica del siglo XIII que abrirá sus puertas para nuestra celebración.',
-    'cer.addr.label':   'Dirección',
-    'cer.addr.val':     'Calle de San Miguel, 15, 31001 Pamplona, Navarra',
-    'cer.time.label':   'Hora',
-    'cer.time.val':     '12:30 — Las puertas abren a las 12:00',
-    'cer.photo.label':  'Ceremonia sin móviles',
-    'cer.photo.val':    'Os pedimos que durante el intercambio de votos guardéis el teléfono. ¡El fotógrafo lo capturará todo!',
-    'cer.map':          'Ver en Google Maps',
-    // reception
-    'rec.eyebrow':    'La Celebración',
-    'rec.title':      'La Finca <em>El Peregrino</em>',
-    'rec.desc':       'Tras la ceremonia, la fiesta continúa en La Finca El Peregrino, una espectacular finca en Puente la Reina, a 20 km de Pamplona, rodeada de la naturaleza navarra. El escenario perfecto para una boda de otoño con cocina de autor y baile hasta el amanecer.',
-    'rec.addr.label': 'Dirección',
-    'rec.addr.val':   'C. Irunbidea, 47, 31100 Puente la Reina, Navarra',
-    'rec.time.label': 'Hora de llegada',
-    'rec.time.val':   '15:00 · Autobuses organizados desde Pamplona',
-    'rec.env.label':  'Entorno',
-    'rec.env.val':    'Finca privada con jardines, salón y terraza exterior',
-    'rec.map':        'Ver en Google Maps',
-    // schedule
-    'sched.eyebrow': 'El Programa',
-    'sched.title':   'Dos días <em>perfectos</em>',
-    'sched.fri':     'Viernes 6 de Noviembre — Pre-Boda',
-    'sched.sat':     'Sábado 7 de Noviembre — La Boda',
-    'tl.fri.1.event': 'Punto de encuentro',      'tl.fri.1.desc': 'Plaza del Castillo, Pamplona',
-    'tl.fri.2.event': 'El Encierro de los Enamorados', 'tl.fri.2.desc': 'Recorrido por las calles de los San Fermines',
-    'tl.fri.3.event': 'Aperitivos en el casco viejo', 'tl.fri.3.desc': 'Pintxos y vino en los bares del centro histórico',
-    'tl.fri.4.event': 'Cena de Pre-Boda',        'tl.fri.4.desc': 'Restaurante por confirmar · ¡Seguid atentos!',
-    'tl.sat.1.event': 'Llegada de los invitados','tl.sat.1.desc': 'Iglesia de San Nicolás, Pamplona',
-    'tl.sat.2.event': 'Ceremonia',               'tl.sat.2.desc': 'Intercambio de votos y anillos',
-    'tl.sat.3.event': 'Cóctel',                  'tl.sat.3.desc': 'Cava y canapés · Pamplona',
-    'tl.sat.4.event': 'Traslado a La Finca El Peregrino', 'tl.sat.4.desc': 'Autobuses organizados · Puente la Reina',
-    'tl.sat.5.event': 'Almuerzo nupcial',        'tl.sat.5.desc': 'Gran Salón · La Finca El Peregrino',
-    'tl.sat.6.event': 'Tarta y brindis',         'tl.sat.6.desc': 'Discursos y champagne',
-    'tl.sat.7.event': 'Baile y fiesta',          'tl.sat.7.desc': 'Primer baile · Música hasta el amanecer',
-    'tl.sat.8.event': 'Último baile',            'tl.sat.8.desc': 'Una noche que nunca olvidaremos',
-    // travel
-    'travel.eyebrow':     'Cómo Llegar',
-    'travel.title':       'Viaje &amp; <em>Alojamiento</em>',
-    'travel.intro':       'Pamplona está muy bien comunicada con el resto de España y Europa. La Finca El Peregrino se encuentra en Puente la Reina, a tan sólo 20 km.',
-    'travel.air.title':   'En Avión',
-    'travel.air.text':    'El aeropuerto más cercano es Pamplona (PNA), a 7 km del centro. También puedes llegar a Bilbao (BIO) o Madrid (MAD) y continuar en tren o coche de alquiler.',
-    'travel.train.title': 'En Tren',
-    'travel.train.text':  'Renfe conecta Pamplona con Madrid, Zaragoza y San Sebastián. La estación de Pamplona-Iruña está en el centro, a 10 minutos andando del casco viejo.',
-    'travel.bus.title':   'Autobús de la Boda',
-    'travel.bus.text':    'Se pondrá a disposición de los invitados un servicio de autobús de ida y vuelta entre Pamplona y La Finca El Peregrino (Puente la Reina). Se ruega confirmación de utilización en el RSVP.',
-    'travel.hotel.title': 'Dónde Dormir',
-    'travel.hotel.text':  'Recomendamos el casco antiguo de Pamplona. Algunas opciones: Gran Hotel La Perla, Hotel NH Collection y Palacio Guendulain. ¡Reservad con antelación!',
-    // faq
+    'story.p1':      'Hay historias que empiezan sin avisar — con una mirada, una risa compartida, o un momento que ninguno de los dos había planeado. La nuestra es así.',
+    'story.p2':      'De los días ordinarios que se fueron convirtiendo en algo extraordinario, de Nueva York a Pamplona, de Miami a las playas del atardecer. Cada ciudad, una página más de algo que ninguno de los dos esperaba escribir.',
+    'story.p3':      'Ahora, rodeados de las personas que más queremos, estamos listos para empezar el capítulo más bonito. No podemos esperar a celebrarlo con vosotros en el corazón de Navarra.',
+
+    /* WEEKEND STRIP */
+    'ws.eyebrow': 'Dos días de celebración',
+    'ws.title':   'El <em>Fin de Semana</em>',
+    'ws.desc':    'Hemos preparado un fin de semana completo: desde el encierro del viernes hasta la última copa del sábado. Descubre el programa completo.',
+    'ws.btn':     'Ver el programa',
+
+    /* FAQ */
     'faq.eyebrow': 'Preguntas Frecuentes',
-    'faq.title':   '¿Tienes <em>dudas</em>?',
-    'faq.q1': '¿La boda es para adultos o también para niños?',
-    'faq.a1': 'Aunque adoramos a vuestros peques, hemos decidido que sea una celebración solo para adultos para que todos podáis disfrutar al máximo de la noche. Os pedimos que organicéis a alguien para cuidarlos ese día.',
-    'faq.q2': '¿Hay servicio de autobús?',
-    'faq.a2': 'Sí. Se pondrá a disposición de los invitados un servicio de autobús de ida y vuelta entre Pamplona y La Finca El Peregrino (Puente la Reina). Os pedimos que confirmad vuestra asistencia y si utilizaréis el autobús en el formulario de RSVP.',
-    'faq.q3': '¿Hay código de vestimenta?',
-    'faq.a3': 'El código de vestimenta es Black Tie Opcional — elegante y formal es bienvenido. Tened en cuenta que el casco viejo de Pamplona tiene adoquines. Por favor, evitad el blanco, el marfil y el crema por respeto a la novia.',
-    'faq.q4': '¿Puedo hacer fotos durante la ceremonia?',
-    'faq.a4': 'La ceremonia será "unplugged" — os pedimos que guardéis el móvil y la cámara mientras intercambiamos los votos. ¡En el cóctel y la fiesta, a disparar!',
-    'faq.q5': '¿Hay opciones para vegetarianos o alergias?',
-    'faq.a5': 'Por supuesto. Por favor indicadlo en vuestro RSVP y nos aseguraremos de que tengáis opciones adaptadas.',
-    'faq.q6': '¿Hasta cuándo puedo confirmar asistencia?',
-    'faq.a6': 'Os pedimos que confirmáis antes del 1 de septiembre de 2026 para poder cerrar números con el caterer y la finca.',
-    'faq.q7': '¿Tenéis lista de boda?',
-    'faq.a7': 'Nuestro mayor regalo es vuestra presencia. Pero si queréis podéis ayudarnos a empezar nuestra historia:<br /><br /><strong>ES59 1583 0001 1591 0591 4514</strong>',
-    // rsvp
-    'rsvp.eyebrow':     'Confirma tu Asistencia',
-    'rsvp.sub':         'Confirma antes del 1 de septiembre de 2026.\nNo podemos esperar a celebrarlo contigo.',
-    'rsvp.fname':       'Nombre',        'rsvp.fname.ph':   'María',
-    'rsvp.lname':       'Apellido',      'rsvp.lname.ph':   'García',
-    'rsvp.email':       'Email',         'rsvp.email.ph':   'tu@correo.com',
-    'rsvp.attending':   '¿Asistirás?',   'rsvp.attending.ph': 'Selecciona una opción…',
-    'rsvp.yes':         '¡Con mucho gusto, allí estaré!',
-    'rsvp.no':          'Lo siento, no podré asistir',
-    'rsvp.guests':      'Número de personas (incluido tú)',
-    'rsvp.preboda':     '¿Vendrás a la Pre-Boda del viernes?',
-    'rsvp.preboda.yes': 'Sí, ¡apuntado!',
-    'rsvp.preboda.no':  'No podré, llegaré el sábado',
-    'rsvp.bus':         '¿Utilizarás el autobús de la boda?',
-    'rsvp.bus.yes':     'Sí, utilizaré el autobús',
-    'rsvp.bus.no':      'No, vendré por mi cuenta',
-    'rsvp.dietary':     'Alergias o requisitos alimentarios',
-    'rsvp.dietary.ph':  'Vegetariano, sin gluten, alergias…',
-    'rsvp.submit':      'Confirmar asistencia',
-    'rsvp.thanks':      '¡Gracias! No podemos esperar a celebrarlo contigo. ✦',
-    // footer
+    'faq.title':   'Todo lo que necesitas saber',
+    'faq.q1': '¿Es una celebración solo para adultos?',
+    'faq.a1': 'Sí, hemos decidido que sea una celebración exclusiva para adultos. Agradecemos vuestra comprensión.',
+    'faq.q2': '¿Habrá autobús de regreso a Pamplona?',
+    'faq.a2': 'Sí, organizaremos un servicio de autobús gratuito de ida y vuelta entre el centro de Pamplona y la Finca El Peregrino. Los detalles exactos del punto de salida se confirmarán próximamente.',
+    'faq.q3': '¿Cuál es el código de vestimenta?',
+    'faq.a3': 'Black Tie Opcional — Tenemos en cuenta que el casco antiguo de Pamplona tiene adoquines, así que os recomendamos elegir el calzado con cuidado si pensáis pasear antes de la ceremonia.',
+    'faq.q4': '¿Será una ceremonia "unplugged"?',
+    'faq.a4': 'Durante el intercambio de votos y alianzas os pediremos que guardéis los móviles para que podáis vivir el momento plenamente. Nuestros fotógrafos capturarán cada instante.',
+    'faq.q5': '¿Podéis atender restricciones alimentarias?',
+    'faq.a5': 'Por supuesto. Al confirmar asistencia, indicad cualquier alergia o restricción dietética y nos aseguraremos de que haya opciones para todos.',
+    'faq.q6': '¿Cuándo hay que confirmar asistencia?',
+    'faq.a6': 'Os pedimos que confirmáis antes del 1 de septiembre de 2026. Si no recibimos confirmación, entenderemos que no podréis acompañarnos.',
+    'faq.q7': '¿Tenéis lista de bodas?',
+    'faq.a7': 'El mejor regalo es vuestra presencia. Si aun así queréis contribuir, tenéis los datos bancarios en la sección "Regalo".',
+
+    /* FOOTER */
     'footer.date': '7 · Noviembre · 2026 · Pamplona, España',
-    'footer.note': 'Hecho con amor para las personas que más queremos.',
+    'footer.note': 'Hecho con amor para las personas que más queremos',
+    'footer.contact1.label': 'María — WhatsApp',
+    'footer.contact2.label': 'Jaime — WhatsApp',
+
+    /* ── INNER PAGES ── */
+
+    /* IMPORTANTE */
+    'imp.eyebrow':  'Información Práctica',
+    'imp.title':    'Todo lo que necesitas',
+    'imp.sub':      'Pamplona, 7 de Noviembre de 2026',
+    'imp.tab1':     'Alojamiento',
+    'imp.tab2':     'Peluquerías',
+    'imp.tab3':     'Maquillaje',
+    'imp.tab4':     'Restaurantes',
+
+    'imp.hotels.intro':   'Hemos seleccionado una serie de hoteles en el centro de Pamplona. Os recomendamos reservar con antelación, ya que el fin de semana del 7 de noviembre puede tener alta demanda.',
+    'imp.pelus.intro':    'Si buscáis peluquería para el gran día, aquí tenéis una selección de los salones mejor valorados de Pamplona. Os recomendamos reservar con tiempo.',
+    'imp.makeup.intro':   'Algunas recomendaciones de maquillaje profesional en Pamplona y alrededores.',
+    'imp.rest.intro':     'Un adelanto de nuestros lugares favoritos. Encontraréis más detalles en la sección Restaurantes.',
+    'imp.rest.link':      'Ver todos los restaurantes →',
+
+    /* RESTAURANTES */
+    'rest.eyebrow': 'Gastronomía',
+    'rest.title':   'Restaurantes',
+    'rest.sub':     'Los favoritos de María en Pamplona',
+    'rest.intro':   'Pamplona es la ciudad de María, y estos son sus rincones favoritos para pintxos y buena mesa. Una guía pequeña pero muy bien curada.',
+    'rest.map.title': 'Mapa de restaurantes',
+
+    /* TURISMO */
+    'tur.eyebrow':       'Navarra te espera',
+    'tur.title':         'Turismo',
+    'tur.sub':           'Pamplona y alrededores',
+    'tur.pamplona.title': 'Qué ver en Pamplona',
+    'tur.pamplona.intro': 'Pamplona, capital de Navarra, es una ciudad con más de 2.000 años de historia. Aquí tienes nuestros lugares imprescindibles para disfrutar antes o después de la boda.',
+    'tur.navarra.title':  'Navarra más allá de Pamplona',
+    'tur.navarra.intro':  'Si tenéis unos días, Navarra os sorprenderá. Desde paisajes de cuento hasta desiertos de bardenas — todo a menos de una hora de Pamplona.',
+
+    /* RSVP */
+    'rsvp.eyebrow': 'Confirmación de asistencia',
+    'rsvp.title':   'RSVP',
+    'rsvp.sub':     '7 de Noviembre de 2026 · Pamplona',
+    'rsvp.intro':   'Nos encantaría contar con vuestra presencia en uno de los días más especiales de nuestras vidas. Por favor, confirmad vuestra asistencia antes del 1 de septiembre de 2026.',
+    'rsvp.btn':     'Confirmar asistencia',
+    'rsvp.contact.title': '¿Tienes alguna duda?',
+    'rsvp.contact.desc':  'No dudéis en escribirnos por WhatsApp. Estaremos encantados de ayudaros.',
+
+    /* REGALO */
+    'reg.eyebrow': 'Lista de Bodas',
+    'reg.title':   'El Regalo',
+    'reg.sub':     'María & Jaime',
+    'reg.intro.1': 'El mejor regalo que nos podéis hacer es vuestra presencia y alegría en este día tan especial.',
+    'reg.intro.2': 'Si aun así queréis hacernos un regalo, hemos optado por algo sencillo: una contribución a nuestra cuenta conjunta. Así podremos elegir juntos en qué invertir vuestro cariño — ya sea un viaje, un rincón del hogar, o una experiencia que recordemos toda la vida.',
+    'reg.iban.label': 'Número de cuenta',
+
+    /* FINDE */
+    'fin.eyebrow':  'El Programa',
+    'fin.title':    'El Fin de Semana',
+    'fin.sub':      '6 & 7 de Noviembre de 2026 · Pamplona',
+    'fin.intro':    'Hemos preparado un fin de semana lleno de momentos especiales. Aquí tienes el programa completo para que puedas organizarte.',
+    'fin.fri.label': 'Viernes 6 de Noviembre · Pre-Boda',
+    'fin.sat.label': 'Sábado 7 de Noviembre · La Boda',
+
+    /* TIMELINE */
+    'tl.fri.1.time': '17:00',
+    'tl.fri.1.event': 'Punto de encuentro',
+    'tl.fri.1.desc': 'Nos reunimos en la Plaza del Castillo, el corazón de Pamplona.',
+    'tl.fri.2.time': '17:30',
+    'tl.fri.2.event': 'El Encierro de los Enamorados',
+    'tl.fri.2.desc': 'Recorremos juntos el trayecto del famoso encierro: Santo Domingo → Plaza de Toros.',
+    'tl.fri.3.time': '19:00',
+    'tl.fri.3.event': 'Aperitivos en el casco antiguo',
+    'tl.fri.3.desc': 'Vinos y pintxos por los bares del casco viejo pamplonés.',
+    'tl.fri.4.time': '21:00',
+    'tl.fri.4.event': 'Cena pre-boda',
+    'tl.fri.4.desc': 'Cena informal juntos. Lugar por confirmar.',
+
+    'tl.sat.1.time': '12:00',
+    'tl.sat.1.event': 'Llegada de invitados',
+    'tl.sat.1.desc': 'Las puertas de la iglesia se abren.',
+    'tl.sat.1.venue': 'Iglesia de San Nicolás, C/ San Miguel 15',
+    'tl.sat.2.time': '12:30',
+    'tl.sat.2.event': 'Ceremonia religiosa',
+    'tl.sat.2.desc': 'Intercambio de votos y alianzas.',
+    'tl.sat.3.time': '13:30',
+    'tl.sat.3.event': 'Cóctel',
+    'tl.sat.3.desc': 'Cava, canapés y primeras fotos en el exterior de la iglesia.',
+    'tl.sat.4.time': '15:00',
+    'tl.sat.4.event': 'Traslado en autobús',
+    'tl.sat.4.desc': 'Autobús gratuito desde Pamplona a la Finca El Peregrino.',
+    'tl.sat.5.time': '15:30',
+    'tl.sat.5.event': 'Almuerzo nupcial',
+    'tl.sat.5.desc': 'Gran almuerzo en los jardines y salones de la finca.',
+    'tl.sat.5.venue': 'Finca El Peregrino, Puente la Reina',
+    'tl.sat.6.time': '19:00',
+    'tl.sat.6.event': 'Tarta y brindis',
+    'tl.sat.6.desc': 'Corte de tarta y palabras de amor.',
+    'tl.sat.7.time': '20:00',
+    'tl.sat.7.event': 'Baile y fiesta',
+    'tl.sat.7.desc': '¡A bailar! La pista es vuestra.',
+    'tl.sat.8.time': '00:00',
+    'tl.sat.8.event': 'Último baile',
+    'tl.sat.8.desc': 'La noche termina, pero el recuerdo dura para siempre.',
   },
 
   en: {
-    // nav
-    'nav.story':    'Our Story',
-    'nav.events':   'Events',
-    'nav.ceremony': 'The Ceremony',
-    'nav.reception':'The Venue',
-    'nav.travel':   'Getting There',
-    // hero
-    'hero.pre':    'You are invited to our wedding',
-    'hero.date':   'Saturday · November 7th, 2026',
-    'hero.loc':    'Pamplona, Navarre · Spain',
+    /* NAV */
+    'nav.home':         'Home',
+    'nav.importante':   'Info',
+    'nav.restaurantes': 'Restaurants',
+    'nav.turismo':      'Tourism',
+    'nav.rsvp':         'RSVP',
+    'nav.regalo':       'Gift',
+    'nav.finde':        'The Weekend',
+
+    /* HERO */
+    'hero.pre':  'You are invited to our wedding',
+    'hero.date': 'Saturday · November 7, 2026',
+    'hero.loc':  'Pamplona, Navarra · Spain',
+    'hero.rsvp': 'Confirm attendance',
     'hero.scroll': 'Scroll',
-    // countdown
-    'cd.label': 'Counting down to the big day',
+
+    /* COUNTDOWN */
+    'cd.label': 'Countdown to the big day',
     'cd.days':  'Days',
     'cd.hours': 'Hours',
     'cd.mins':  'Minutes',
     'cd.secs':  'Seconds',
-    // invitation
-    'inv.eyebrow': 'The Invitation',
-    'inv.family1': 'Vicente de los Ríos Medina and Leticia Eva Mouvet Cañete',
-    'inv.junto':   'together with',
-    'inv.family2': 'Rafael Francisco Cortijo Gorraiz and María Elena Rojo Barrios',
-    'inv.text':    'announce the wedding of their children and joyfully invite you to the religious ceremony to be held, D.V., on Saturday, November 7th, 2026, at half past twelve in the morning, at the Church of San Nicolás in Pamplona, and to the celebration that will follow at Finca El Peregrino in Puente la Reina.',
-    'inv.src':     'R.S.V.P. · Pamplona, 2026',
-    // story
+
+    /* INVITATION */
+    'inv.eyebrow':  'The Invitation',
+    'inv.family1':  'Vicente de los Ríos Medina and Leticia Eva Mouvet Cañete',
+    'inv.junto':    'together with',
+    'inv.family2':  'Rafael Francisco Cortijo Gorraiz and María Elena Rojo Barrios',
+    'inv.text':     'announce the wedding of their children and joyfully invite you to the religious ceremony which will take place, D.v., on Saturday the 7th of November 2026, at twelve-thirty in the morning, at the Church of San Nicolás in Pamplona, and to the celebration that will follow at Finca El Peregrino in Puente la Reina.',
+    'inv.src':      'R.S.V.P. · Pamplona, 2026',
+
+    /* EVENT BLOCKS */
+    'ev.pre.eyebrow': 'Friday · November 6, 2026',
+    'ev.pre.title':   'The Lovers\' Encierro',
+    'ev.pre.desc':    'The day before the wedding, we invite you to walk the legendary streets of the San Fermín bull run. A unique experience to kick off the celebration, Pamplona style.',
+    'ev.pre.when':    '5:00 PM',
+    'ev.pre.where':   'Old Town, Pamplona',
+    'ev.pre.route':   'Santo Domingo → Plaza de Toros',
+
+    'ev.cer.eyebrow': 'Saturday · November 7, 2026',
+    'ev.cer.title':   'The Ceremony',
+    'ev.cer.desc':    'The religious ceremony will take place at the Church of San Nicolás, in the heart of Pamplona\'s historic old town. Doors open from 12:00 noon.',
+    'ev.cer.when':    '12:30 PM (doors at 12:00)',
+    'ev.cer.where':   'Iglesia de San Nicolás',
+    'ev.cer.addr':    'C/ San Miguel 15, Pamplona',
+
+    'ev.cel.eyebrow': 'Saturday · November 7, 2026',
+    'ev.cel.title':   'The Celebration',
+    'ev.cel.desc':    'After the ceremony, we will travel by bus to Finca El Peregrino in Puente la Reina, where we will celebrate our wedding luncheon with gardens, music, and dancing until midnight.',
+    'ev.cel.when':    '3:30 PM (arrival)',
+    'ev.cel.where':   'Finca El Peregrino',
+    'ev.cel.addr':    'Puente la Reina, Navarra (12 miles)',
+
+    /* STORY */
     'story.eyebrow': 'Our Story',
-    'story.title':   'A love story worth <em>celebrating</em>',
-    'story.p1':      'Some stories begin quietly — with a glance, a shared laugh, or a moment neither of you planned. Ours is that kind of story. Ordinary days that turned into something extraordinary, from New York to Pamplona, from Miami to sunsets on the beach.',
-    'story.p2':      'Now, surrounded by the people we love most, we are ready to begin the most beautiful chapter yet. We cannot wait to celebrate with you in the heart of Navarre.',
-    // events
-    'events.eyebrow': 'Two days of celebration',
-    'events.title':   'The <em>Weekend</em>',
-    'ev1.tag':   'Friday, November 6th, 2026 · Pre-Wedding',
-    'ev1.title': 'The Lovers\' Running of the Bulls',
-    'ev1.desc':  'The day before the wedding, we invite you to walk the legendary route of the San Fermín Running of the Bulls. A unique experience to kick off the celebration in true Pamplona style.',
-    'ev2.tag':   'Saturday, November 7th, 2026 · The Wedding',
-    'ev2.title': 'The Big Day',
-    'ev2.desc':  'The ceremony will be held at the historic Church of San Nicolás, in the old town of Pamplona, followed by a grand celebration at Finca El Peregrino in Puente la Reina.',
-    'ev2.stop1': 'Church of San Nicolás',
-    'ev2.stop2': 'Cocktail Hour',
-    'ev2.stop3': 'Finca El Peregrino',
-    'ev2.stop4': 'Dancing till dawn',
-    // ceremony
-    'cer.eyebrow':      'The Ceremony',
-    'cer.title':        'Church of <em>San Nicolás</em>',
-    'cer.desc':         'We will exchange our vows in the beautiful Church of San Nicolás de Bari, one of the oldest and most iconic temples in the old town of Pamplona. A Romanesque gem from the 13th century that will open its doors for our celebration.',
-    'cer.addr.label':   'Address',
-    'cer.addr.val':     'Calle de San Miguel, 15, 31001 Pamplona, Navarre',
-    'cer.time.label':   'Time',
-    'cer.time.val':     '12:30 — Doors open at 12:00',
-    'cer.photo.label':  'Unplugged ceremony',
-    'cer.photo.val':    'We kindly ask you to put away your phone while we exchange our vows. Our photographer will capture every moment!',
-    'cer.map':          'View on Google Maps',
-    // reception
-    'rec.eyebrow':    'The Reception',
-    'rec.title':      'Finca <em>El Peregrino</em>',
-    'rec.desc':       'After the ceremony, the party continues at Finca El Peregrino, a spectacular estate in Puente la Reina, 20 km from Pamplona, surrounded by the Navarrese countryside. The perfect setting for an autumn wedding with fine dining and dancing until dawn.',
-    'rec.addr.label': 'Address',
-    'rec.addr.val':   'C. Irunbidea, 47, 31100 Puente la Reina, Navarre',
-    'rec.time.label': 'Arrival time',
-    'rec.time.val':   '15:00 · Buses organised from Pamplona',
-    'rec.env.label':  'Setting',
-    'rec.env.val':    'Private estate with gardens, grand hall and outdoor terrace',
-    'rec.map':        'View on Google Maps',
-    // schedule
-    'sched.eyebrow': 'The Programme',
-    'sched.title':   'Two <em>perfect</em> days',
-    'sched.fri':     'Friday, November 6th — Pre-Wedding',
-    'sched.sat':     'Saturday, November 7th — The Wedding',
-    'tl.fri.1.event': 'Meeting point',           'tl.fri.1.desc': 'Plaza del Castillo, Pamplona',
-    'tl.fri.2.event': 'The Lovers\' Encierro',   'tl.fri.2.desc': 'Walk the legendary San Fermín route',
-    'tl.fri.3.event': 'Aperitifs in the old town','tl.fri.3.desc': 'Pintxos and wine in the historic centre',
-    'tl.fri.4.event': 'Pre-Wedding Dinner',      'tl.fri.4.desc': 'Restaurant TBC — stay tuned!',
-    'tl.sat.1.event': 'Guests arrive',           'tl.sat.1.desc': 'Church of San Nicolás, Pamplona',
-    'tl.sat.2.event': 'Ceremony',                'tl.sat.2.desc': 'Exchange of vows and rings',
-    'tl.sat.3.event': 'Cocktail hour',           'tl.sat.3.desc': 'Cava and canapés · Pamplona',
-    'tl.sat.4.event': 'Transfer to Finca El Peregrino', 'tl.sat.4.desc': 'Organised buses · Puente la Reina',
-    'tl.sat.5.event': 'Wedding luncheon',        'tl.sat.5.desc': 'Grand Hall · Finca El Peregrino',
-    'tl.sat.6.event': 'Cake & toasts',           'tl.sat.6.desc': 'Speeches and champagne',
-    'tl.sat.7.event': 'Dancing & celebration',   'tl.sat.7.desc': 'First dance · Music till dawn',
-    'tl.sat.8.event': 'Last dance',              'tl.sat.8.desc': 'A night we will never forget',
-    // travel
-    'travel.eyebrow':     'Getting There',
-    'travel.title':       'Travel &amp; <em>Accommodation</em>',
-    'travel.intro':       'Pamplona is very well connected to the rest of Spain and Europe. Finca El Peregrino is in Puente la Reina, just 20 km away.',
-    'travel.air.title':   'By Plane',
-    'travel.air.text':    'The closest airport is Pamplona (PNA), 7 km from the city centre. You can also fly to Bilbao (BIO) or Madrid (MAD) and continue by train or rental car.',
-    'travel.train.title': 'By Train',
-    'travel.train.text':  'Renfe connects Pamplona with Madrid, Zaragoza and San Sebastián. Pamplona-Iruña station is in the city centre, a 10-minute walk from the old town.',
-    'travel.bus.title':   'Wedding Bus',
-    'travel.bus.text':    'A return bus service will be provided for guests between Pamplona and Finca El Peregrino (Puente la Reina). Please confirm your use of the bus in your RSVP.',
-    'travel.hotel.title': 'Where to Stay',
-    'travel.hotel.text':  'We recommend staying in Pamplona\'s old town. Some options: Gran Hotel La Perla, Hotel NH Collection, and Palacio Guendulain. Book in advance!',
-    // faq
+    'story.title':   'A story of <em>love</em>',
+    'story.p1':      'Some stories begin without warning — with a glance, a shared laugh, or a moment neither of you had planned. Ours is like that.',
+    'story.p2':      'From ordinary days that turned into something extraordinary, from New York to Pamplona, from Miami to sunset beaches. Each city, another page of something neither of us expected to write.',
+    'story.p3':      'Now, surrounded by the people we love most, we are ready to begin the most beautiful chapter. We can\'t wait to celebrate it with you in the heart of Navarra.',
+
+    /* WEEKEND STRIP */
+    'ws.eyebrow': 'Two days of celebration',
+    'ws.title':   'The <em>Weekend</em>',
+    'ws.desc':    'We have planned a full weekend: from Friday\'s encierro to the last drink on Saturday night. Discover the full programme.',
+    'ws.btn':     'See the programme',
+
+    /* FAQ */
     'faq.eyebrow': 'Frequently Asked Questions',
-    'faq.title':   'Any <em>questions</em>?',
-    'faq.q1': 'Is the wedding adults-only?',
-    'faq.a1': 'Although we adore your little ones, we have decided this will be an adults-only celebration so everyone can enjoy the evening to the fullest. We kindly ask you to arrange childcare for the day.',
-    'faq.q2': 'Is there a bus service?',
-    'faq.a2': 'Yes. A return bus service will be available for guests between Pamplona and Finca El Peregrino (Puente la Reina). Please confirm in your RSVP whether you will be using it.',
-    'faq.q3': 'Is there a dress code?',
-    'faq.a3': 'The dress code is Black Tie Optional — formal attire is welcome and encouraged. Note that Pamplona\'s old town has cobblestones. Please avoid white, ivory, or cream out of respect for the bride.',
-    'faq.q4': 'Can I take photos during the ceremony?',
-    'faq.a4': 'We are having an unplugged ceremony — please put your phone away during the vows. Our photographers will capture everything. During the cocktail and reception, snap away!',
-    'faq.q5': 'Are there vegetarian / allergy options?',
-    'faq.a5': 'Absolutely. Please indicate any dietary requirements in your RSVP and we will make sure you are catered for.',
-    'faq.q6': 'When is the RSVP deadline?',
-    'faq.a6': 'Please RSVP by September 1st, 2026 so we can confirm numbers with the caterer and the venue.',
+    'faq.title':   'Everything you need to know',
+    'faq.q1': 'Is this an adults-only celebration?',
+    'faq.a1': 'Yes, we have decided to make this an adults-only celebration. We appreciate your understanding.',
+    'faq.q2': 'Will there be a return bus to Pamplona?',
+    'faq.a2': 'Yes, we will organise a free return bus service between central Pamplona and Finca El Peregrino. Exact pick-up details will be confirmed soon.',
+    'faq.q3': 'What is the dress code?',
+    'faq.a3': 'Black Tie Optional — Please note that Pamplona\'s old town has cobblestones, so we recommend choosing your footwear carefully if you plan to stroll before the ceremony.',
+    'faq.q4': 'Will it be an unplugged ceremony?',
+    'faq.a4': 'During the exchange of vows and rings, we ask that you put away your phones so you can fully experience the moment. Our photographers will capture every second.',
+    'faq.q5': 'Can you accommodate dietary requirements?',
+    'faq.a5': 'Of course. When confirming attendance, please note any allergies or dietary restrictions and we will ensure there are options for everyone.',
+    'faq.q6': 'When do I need to RSVP?',
+    'faq.a6': 'Please confirm your attendance by 1 September 2026. If we do not hear from you, we will assume you are unable to join us.',
     'faq.q7': 'Do you have a gift registry?',
-    'faq.a7': 'Your presence is our greatest gift. But if you\'d like to contribute to our story:<br /><br /><strong>ES59 1583 0001 1591 0591 4514</strong>',
-    // rsvp
-    'rsvp.eyebrow':     'Confirm Your Attendance',
-    'rsvp.sub':         'Please reply by September 1st, 2026.\nWe cannot wait to celebrate with you.',
-    'rsvp.fname':       'First Name',    'rsvp.fname.ph':   'María',
-    'rsvp.lname':       'Last Name',     'rsvp.lname.ph':   'García',
-    'rsvp.email':       'Email',         'rsvp.email.ph':   'you@email.com',
-    'rsvp.attending':   'Will you attend?', 'rsvp.attending.ph': 'Please select…',
-    'rsvp.yes':         'Joyfully accepts',
-    'rsvp.no':          'Regretfully declines',
-    'rsvp.guests':      'Number of guests (including yourself)',
-    'rsvp.preboda':     'Will you join the Pre-Wedding on Friday?',
-    'rsvp.preboda.yes': 'Yes, count me in!',
-    'rsvp.preboda.no':  'No, I\'ll arrive on Saturday',
-    'rsvp.bus':         'Will you use the wedding bus?',
-    'rsvp.bus.yes':     'Yes, I\'ll take the bus',
-    'rsvp.bus.no':      'No, I\'ll make my own way',
-    'rsvp.dietary':     'Dietary requirements or allergies',
-    'rsvp.dietary.ph':  'Vegetarian, gluten-free, allergies…',
-    'rsvp.submit':      'Confirm attendance',
-    'rsvp.thanks':      'Thank you — we cannot wait to celebrate with you! ✦',
-    // footer
+    'faq.a7': 'Your presence is the greatest gift. If you still wish to give something, our bank details are in the Gift section.',
+
+    /* FOOTER */
     'footer.date': '7 · November · 2026 · Pamplona, Spain',
-    'footer.note': 'Made with love for the people we love most.',
-  },
+    'footer.note': 'Made with love for the people we cherish most',
+    'footer.contact1.label': 'María — WhatsApp',
+    'footer.contact2.label': 'Jaime — WhatsApp',
+
+    /* ── INNER PAGES ── */
+
+    /* IMPORTANTE */
+    'imp.eyebrow':  'Practical Information',
+    'imp.title':    'Everything you need',
+    'imp.sub':      'Pamplona, November 7, 2026',
+    'imp.tab1':     'Accommodation',
+    'imp.tab2':     'Hair Salons',
+    'imp.tab3':     'Makeup',
+    'imp.tab4':     'Restaurants',
+
+    'imp.hotels.intro':  'We have selected a number of hotels in central Pamplona. We recommend booking early as the weekend of November 7 can be in high demand.',
+    'imp.pelus.intro':   'If you are looking for a hairdresser for the big day, here is a selection of the highest-rated salons in Pamplona. We recommend booking in advance.',
+    'imp.makeup.intro':  'Some recommendations for professional makeup artists in Pamplona and the surrounding area.',
+    'imp.rest.intro':    'A preview of our favourite spots. Find more details in the Restaurants section.',
+    'imp.rest.link':     'See all restaurants →',
+
+    /* RESTAURANTES */
+    'rest.eyebrow': 'Gastronomy',
+    'rest.title':   'Restaurants',
+    'rest.sub':     'María\'s favourites in Pamplona',
+    'rest.intro':   'Pamplona is María\'s city, and these are her favourite spots for pintxos and great food. A small but very well curated guide.',
+    'rest.map.title': 'Restaurant map',
+
+    /* TURISMO */
+    'tur.eyebrow':        'Navarra awaits',
+    'tur.title':          'Tourism',
+    'tur.sub':            'Pamplona and surroundings',
+    'tur.pamplona.title': 'What to see in Pamplona',
+    'tur.pamplona.intro': 'Pamplona, the capital of Navarra, is a city with over 2,000 years of history. Here are our must-see places to enjoy before or after the wedding.',
+    'tur.navarra.title':  'Navarra beyond Pamplona',
+    'tur.navarra.intro':  'If you have a few days, Navarra will surprise you. From fairy-tale landscapes to desert badlands — all within an hour of Pamplona.',
+
+    /* RSVP */
+    'rsvp.eyebrow': 'Attendance confirmation',
+    'rsvp.title':   'RSVP',
+    'rsvp.sub':     'November 7, 2026 · Pamplona',
+    'rsvp.intro':   'We would love to have you with us on one of the most special days of our lives. Please confirm your attendance by 1 September 2026.',
+    'rsvp.btn':     'Confirm attendance',
+    'rsvp.contact.title': 'Have a question?',
+    'rsvp.contact.desc':  'Don\'t hesitate to reach out via WhatsApp. We\'ll be happy to help.',
+
+    /* REGALO */
+    'reg.eyebrow': 'Wedding Registry',
+    'reg.title':   'The Gift',
+    'reg.sub':     'María & Jaime',
+    'reg.intro.1': 'The greatest gift you can give us is your presence and joy on this special day.',
+    'reg.intro.2': 'If you still wish to give us a gift, we have kept it simple: a contribution to our joint account. This way we can choose together how to invest your love — whether it\'s a trip, a corner of our home, or an experience we\'ll remember for life.',
+    'reg.iban.label': 'Account number',
+
+    /* FINDE */
+    'fin.eyebrow':  'The Programme',
+    'fin.title':    'The Weekend',
+    'fin.sub':      'November 6 & 7, 2026 · Pamplona',
+    'fin.intro':    'We have planned a weekend full of special moments. Here is the full programme so you can plan ahead.',
+    'fin.fri.label': 'Friday November 6 · Pre-Wedding',
+    'fin.sat.label': 'Saturday November 7 · The Wedding',
+
+    /* TIMELINE */
+    'tl.fri.1.time': '5:00 PM',
+    'tl.fri.1.event': 'Meeting point',
+    'tl.fri.1.desc': 'We meet at Plaza del Castillo, the heart of Pamplona.',
+    'tl.fri.2.time': '5:30 PM',
+    'tl.fri.2.event': 'The Lovers\' Encierro',
+    'tl.fri.2.desc': 'We walk together the famous bull run route: Santo Domingo → Plaza de Toros.',
+    'tl.fri.3.time': '7:00 PM',
+    'tl.fri.3.event': 'Aperitifs in the old town',
+    'tl.fri.3.desc': 'Wines and pintxos at the bars of Pamplona\'s old quarter.',
+    'tl.fri.4.time': '9:00 PM',
+    'tl.fri.4.event': 'Pre-wedding dinner',
+    'tl.fri.4.desc': 'Casual dinner together. Venue to be confirmed.',
+
+    'tl.sat.1.time': '12:00 PM',
+    'tl.sat.1.event': 'Guest arrival',
+    'tl.sat.1.desc': 'The church doors open.',
+    'tl.sat.1.venue': 'Iglesia de San Nicolás, C/ San Miguel 15',
+    'tl.sat.2.time': '12:30 PM',
+    'tl.sat.2.event': 'Religious ceremony',
+    'tl.sat.2.desc': 'Exchange of vows and rings.',
+    'tl.sat.3.time': '1:30 PM',
+    'tl.sat.3.event': 'Cocktail hour',
+    'tl.sat.3.desc': 'Cava, canapés and first photos outside the church.',
+    'tl.sat.4.time': '3:00 PM',
+    'tl.sat.4.event': 'Bus transfer',
+    'tl.sat.4.desc': 'Free bus from Pamplona to Finca El Peregrino.',
+    'tl.sat.5.time': '3:30 PM',
+    'tl.sat.5.event': 'Wedding luncheon',
+    'tl.sat.5.desc': 'Grand luncheon in the gardens and halls of the estate.',
+    'tl.sat.5.venue': 'Finca El Peregrino, Puente la Reina',
+    'tl.sat.6.time': '7:00 PM',
+    'tl.sat.6.event': 'Cake & toasts',
+    'tl.sat.6.desc': 'Cake cutting and heartfelt toasts.',
+    'tl.sat.7.time': '8:00 PM',
+    'tl.sat.7.event': 'Dancing & party',
+    'tl.sat.7.desc': 'Time to dance! The floor is yours.',
+    'tl.sat.8.time': '12:00 AM',
+    'tl.sat.8.event': 'Last dance',
+    'tl.sat.8.desc': 'The night ends, but the memory lasts forever.',
+  }
 };
 
-// ══════════════════════════════════════
-// LANGUAGE  (ES / EN)
-// ══════════════════════════════════════
-let currentLang = 'es';
+// ── LANGUAGE ────────────────────────────────────────────────
+let currentLang = localStorage.getItem('mj-lang') || 'es';
 
-function applyLang(lang) {
-  const t = translations[lang];
-  if (!t) return;
+function applyTranslations(lang) {
   currentLang = lang;
+  localStorage.setItem('mj-lang', lang);
   document.documentElement.lang = lang;
 
   // text content
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (t[key] !== undefined) el.textContent = t[key];
+    if (T[lang][key] !== undefined) {
+      if (T[lang][key].includes('<')) {
+        el.innerHTML = T[lang][key];
+      } else {
+        el.textContent = T[lang][key];
+      }
+    }
   });
 
-  // innerHTML (for elements with <em> etc.)
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.dataset.i18nHtml;
-    if (t[key] !== undefined) el.innerHTML = t[key];
+  // placeholders
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.dataset.i18nPh;
+    if (T[lang][key] !== undefined) el.placeholder = T[lang][key];
   });
 
-  // placeholder attributes
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.dataset.i18nPlaceholder;
-    if (t[key] !== undefined) el.placeholder = t[key];
-  });
-
-  // sync all toggle buttons (nav + mobile)
+  // lang buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 }
 
-function initLang() {
+// ── NAV ─────────────────────────────────────────────────────
+function initNav() {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+
+  // solid nav on inner pages (no hero)
+  const hasHero = !!document.getElementById('hero');
+  if (!hasHero) nav.classList.add('solid');
+
+  // scroll behaviour (only on pages with hero)
+  if (hasHero) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  }
+
+  // active link
+  const path = location.pathname.replace(/\/$/, '') || '/index.html';
+  document.querySelectorAll('.nav-links a, .m-link').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href && (path.endsWith(href) || (href === '/index.html' && path === '/'))) {
+      a.classList.add('active');
+    }
+  });
+
+  // burger
+  const burger = document.getElementById('burgerBtn');
+  const menu   = document.getElementById('mobile-menu');
+  const close  = document.getElementById('menuClose');
+  if (burger && menu) {
+    burger.addEventListener('click', () => menu.classList.add('open'));
+    close?.addEventListener('click', () => menu.classList.remove('open'));
+    menu.querySelectorAll('.m-link').forEach(l =>
+      l.addEventListener('click', () => menu.classList.remove('open'))
+    );
+  }
+
+  // language toggle
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
   });
 }
 
-// ══════════════════════════════════════
-// NAV  —  transparent → opaque on scroll
-// ══════════════════════════════════════
-(function initNav() {
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
+// ── SCROLL REVEAL ────────────────────────────────────────────
+function initReveal() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
 
-// ══════════════════════════════════════
-// MOBILE MENU
-// ══════════════════════════════════════
-(function initMobileMenu() {
-  const menu   = document.getElementById('mobile-menu');
-  const burger = document.getElementById('burgerBtn');
-  const close  = document.getElementById('menuClose');
+// ── COUNTDOWN ────────────────────────────────────────────────
+function initCountdown() {
+  const el = document.getElementById('countdown');
+  if (!el) return;
+  const target = new Date('2026-11-07T11:30:00Z'); // 12:30 CET = 11:30 UTC
+  const dEl = document.getElementById('cd-days');
+  const hEl = document.getElementById('cd-hours');
+  const mEl = document.getElementById('cd-mins');
+  const sEl = document.getElementById('cd-secs');
 
-  burger.addEventListener('click', () => menu.classList.add('open'));
-  close.addEventListener('click',  () => menu.classList.remove('open'));
-  menu.querySelectorAll('.m-link').forEach(l =>
-    l.addEventListener('click', () => menu.classList.remove('open'))
-  );
-})();
-
-// ══════════════════════════════════════
-// HERO  —  zoom-out on load
-// ══════════════════════════════════════
-(function initHero() {
-  const bg = document.getElementById('heroBg');
-  requestAnimationFrame(() => setTimeout(() => bg.classList.add('zoomed'), 100));
-})();
-
-// ══════════════════════════════════════
-// COUNTDOWN  —  to 7 Nov 2026 12:30 CET
-// ══════════════════════════════════════
-(function initCountdown() {
-  const target = new Date('2026-11-07T12:30:00+01:00').getTime();
-  const els = {
-    d: document.getElementById('cd-d'),
-    h: document.getElementById('cd-h'),
-    m: document.getElementById('cd-m'),
-    s: document.getElementById('cd-s'),
-  };
-  function pad(n) { return String(n).padStart(2, '0'); }
   function tick() {
     const diff = target - Date.now();
-    if (diff <= 0) {
-      Object.values(els).forEach(e => e.textContent = '00');
-      return;
-    }
-    els.d.textContent = pad(Math.floor(diff / 86400000));
-    els.h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
-    els.m.textContent = pad(Math.floor((diff % 3600000)  / 60000));
-    els.s.textContent = pad(Math.floor((diff % 60000)    / 1000));
+    if (diff <= 0) { dEl.textContent = hEl.textContent = mEl.textContent = sEl.textContent = '00'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    dEl.textContent = String(d).padStart(2, '0');
+    hEl.textContent = String(h).padStart(2, '0');
+    mEl.textContent = String(m).padStart(2, '0');
+    sEl.textContent = String(s).padStart(2, '0');
   }
   tick();
   setInterval(tick, 1000);
-})();
+}
 
-// ══════════════════════════════════════
-// SCROLL REVEAL
-// ══════════════════════════════════════
-(function initReveal() {
-  const io = new IntersectionObserver(
-    entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    }),
-    { threshold: 0.12 }
-  );
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-})();
+// ── HERO ZOOM ────────────────────────────────────────────────
+function initHero() {
+  const bg = document.querySelector('.hero-bg');
+  if (!bg) return;
+  requestAnimationFrame(() => bg.classList.add('loaded'));
+}
 
-// ══════════════════════════════════════
-// GALLERY  —  drag scroll + lightbox
-// ══════════════════════════════════════
-(function initGallery() {
-  const strip = document.getElementById('galleryStrip');
-  if (!strip) return;
-
-  let isDown = false, startX, scrollLeft;
-  strip.addEventListener('mousedown', e => {
-    isDown = true; strip.style.cursor = 'grabbing';
-    startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft;
+// ── GALLERY DRAG ─────────────────────────────────────────────
+function initGallery() {
+  const gallery = document.querySelector('.story-gallery');
+  if (!gallery) return;
+  let isDown = false, startX = 0, scrollLeft = 0;
+  gallery.addEventListener('mousedown', e => {
+    isDown = true; gallery.classList.add('dragging');
+    startX = e.pageX - gallery.offsetLeft; scrollLeft = gallery.scrollLeft;
   });
-  strip.addEventListener('mouseleave', () => { isDown = false; strip.style.cursor = 'grab'; });
-  strip.addEventListener('mouseup',    () => { isDown = false; strip.style.cursor = 'grab'; });
-  strip.addEventListener('mousemove', e => {
+  document.addEventListener('mouseup',   () => { isDown = false; gallery.classList.remove('dragging'); });
+  gallery.addEventListener('mousemove', e => {
     if (!isDown) return;
     e.preventDefault();
-    strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX) * 1.4;
+    gallery.scrollLeft = scrollLeft - (e.pageX - gallery.offsetLeft - startX);
   });
+  // lightbox on click
+  const imgs = [...gallery.querySelectorAll('img')];
+  imgs.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
+}
 
-  const images   = Array.from(strip.querySelectorAll('img.clickable'));
-  const lightbox = document.getElementById('lightbox');
-  const lbImg    = document.getElementById('lb-img');
-  let current    = 0;
+// ── LIGHTBOX ─────────────────────────────────────────────────
+function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  const img   = lb.querySelector('img');
+  const imgs  = [...document.querySelectorAll('.story-gallery img')];
+  let current = 0;
 
-  function openLb(idx)  { current = idx; lbImg.src = images[idx].src; lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function closeLb()    { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-  function showNext()   { openLb((current + 1) % images.length); }
-  function showPrev()   { openLb((current - 1 + images.length) % images.length); }
+  function openLightbox(i) {
+    current = i;
+    img.src = imgs[i].src;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function prev() { current = (current - 1 + imgs.length) % imgs.length; img.src = imgs[current].src; }
+  function next() { current = (current + 1) % imgs.length; img.src = imgs[current].src; }
 
-  images.forEach((img, idx) => img.addEventListener('click', () => openLb(idx)));
-  document.getElementById('lbClose').addEventListener('click', closeLb);
-  document.getElementById('lbNext').addEventListener('click',  showNext);
-  document.getElementById('lbPrev').addEventListener('click',  showPrev);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+  window.openLightbox = openLightbox;
+  lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+  lb.querySelector('.lb-prev').addEventListener('click', prev);
+  lb.querySelector('.lb-next').addEventListener('click', next);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
   document.addEventListener('keydown', e => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape')      closeLb();
-    if (e.key === 'ArrowRight')  showNext();
-    if (e.key === 'ArrowLeft')   showPrev();
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
   });
-})();
+}
 
-// ══════════════════════════════════════
-// FAQ  —  accordion
-// ══════════════════════════════════════
-(function initFaq() {
-  document.querySelectorAll('.faq-trigger').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
+// ── FAQ ──────────────────────────────────────────────────────
+function initFaq() {
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     });
   });
-})();
+}
 
-// ══════════════════════════════════════
-// RSVP  —  POST to /api/rsvp
-// ══════════════════════════════════════
-(function initRsvp() {
-  const form = document.getElementById('rsvpForm');
-  const btn  = document.getElementById('rsvpBtn');
-  const msg  = document.getElementById('rsvpMsg');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    btn.disabled = true;
-    btn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
-
-    const data = {
-      firstName: form.firstName.value.trim(),
-      lastName:  form.lastName.value.trim(),
-      email:     form.email.value.trim(),
-      attending: form.attending.value,
-      guests:    form.guests.value,
-      preboda:   form.preboda.value,
-      bus:       form.bus.value,
-      dietary:   form.dietary.value.trim(),
-      lang:      currentLang,
-    };
-
-    try {
-      const res = await fetch('/api/rsvp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+// ── TABS (inner pages) ───────────────────────────────────────
+function initTabs() {
+  const btns = document.querySelectorAll('.tab-btn');
+  if (!btns.length) return;
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.dataset.tab;
+      document.querySelectorAll('.tab-section').forEach(s => {
+        s.classList.toggle('active', s.id === target);
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        msg.style.display  = 'block';
-      } else {
-        throw new Error();
-      }
-    } catch (_) {
-      btn.disabled = false;
-      btn.textContent = translations[currentLang]['rsvp.submit'];
-      alert(currentLang === 'es'
-        ? 'Algo salió mal. Por favor, inténtalo de nuevo.'
-        : 'Something went wrong. Please try again.');
-    }
+    });
   });
-})();
+}
 
-// ── Init ──
-initLang();
+// ── IBAN COPY ────────────────────────────────────────────────
+function initIbanCopy() {
+  const btn = document.querySelector('.iban-copy');
+  if (!btn) return;
+  const feedback = document.querySelector('.iban-copied');
+  btn.addEventListener('click', () => {
+    const iban = document.querySelector('.iban-code')?.textContent?.trim();
+    if (!iban) return;
+    navigator.clipboard.writeText(iban).then(() => {
+      if (feedback) {
+        feedback.textContent = currentLang === 'es' ? '¡Copiado!' : 'Copied!';
+        setTimeout(() => { feedback.textContent = ''; }, 3000);
+      }
+    });
+  });
+}
+
+// ── BOOT ────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initNav();
+  initReveal();
+  applyTranslations(currentLang);
+  initCountdown();
+  initHero();
+  initGallery();
+  initLightbox();
+  initFaq();
+  initTabs();
+  initIbanCopy();
+});

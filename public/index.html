@@ -9,25 +9,23 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════
-     NAV
-════════════════════════════════════ -->
+<!-- ── NAV ─────────────────────────────────────────────────── -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">M &amp; J</a>
+  <a href="/index.html" class="nav-logo">M &amp; J</a>
   <ul class="nav-links">
-    <li><a href="#story"     data-i18n="nav.story">Nuestra Historia</a></li>
-    <li><a href="#events"    data-i18n="nav.events">Eventos</a></li>
-    <li><a href="#ceremony"  data-i18n="nav.ceremony">La Ceremonia</a></li>
-    <li><a href="#reception" data-i18n="nav.reception">La Finca</a></li>
-    <li><a href="#travel"    data-i18n="nav.travel">Cómo Llegar</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="/index.html"        data-i18n="nav.home">Inicio</a></li>
+    <li><a href="/importante.html"   data-i18n="nav.importante">Información</a></li>
+    <li><a href="/restaurantes.html" data-i18n="nav.restaurantes">Restaurantes</a></li>
+    <li><a href="/turismo.html"      data-i18n="nav.turismo">Turismo</a></li>
+    <li><a href="/rsvp.html"         data-i18n="nav.rsvp">RSVP</a></li>
+    <li><a href="/regalo.html"       data-i18n="nav.regalo">Regalo</a></li>
+    <li><a href="/finde.html"        data-i18n="nav.finde">El Finde</a></li>
   </ul>
   <div class="lang-toggle">
     <button class="lang-btn active" data-lang="es">ES</button>
     <button class="lang-btn" data-lang="en">EN</button>
   </div>
-  <button class="nav-burger" id="burgerBtn" aria-label="Abrir menú">
+  <button class="nav-burger" id="burgerBtn" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -35,679 +33,258 @@
 <!-- Mobile menu -->
 <div id="mobile-menu">
   <button class="mobile-close" id="menuClose">✕</button>
-  <a href="#story"     class="m-link" data-i18n="nav.story">Nuestra Historia</a>
-  <a href="#events"    class="m-link" data-i18n="nav.events">Eventos</a>
-  <a href="#ceremony"  class="m-link" data-i18n="nav.ceremony">La Ceremonia</a>
-  <a href="#reception" class="m-link" data-i18n="nav.reception">La Finca</a>
-  <a href="#travel"    class="m-link" data-i18n="nav.travel">Cómo Llegar</a>
-  <a href="#faq"       class="m-link">FAQ</a>
-  <a href="#rsvp"      class="m-link">RSVP</a>
+  <a href="/index.html"        class="m-link active" data-i18n="nav.home">Inicio</a>
+  <a href="/importante.html"   class="m-link" data-i18n="nav.importante">Información</a>
+  <a href="/restaurantes.html" class="m-link" data-i18n="nav.restaurantes">Restaurantes</a>
+  <a href="/turismo.html"      class="m-link" data-i18n="nav.turismo">Turismo</a>
+  <a href="/rsvp.html"         class="m-link" data-i18n="nav.rsvp">RSVP</a>
+  <a href="/regalo.html"       class="m-link" data-i18n="nav.regalo">Regalo</a>
+  <a href="/finde.html"        class="m-link" data-i18n="nav.finde">El Finde</a>
   <div class="lang-toggle lang-toggle--mobile">
     <button class="lang-btn active" data-lang="es">ES</button>
     <button class="lang-btn" data-lang="en">EN</button>
   </div>
 </div>
 
-<!-- ════════════════════════════════════
-     HERO
-════════════════════════════════════ -->
+<!-- ── HERO ─────────────────────────────────────────────────── -->
 <section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-pre" data-i18n="hero.pre">Os invitamos a nuestra boda</p>
-    <h1 class="hero-names">
-      María
-      <span class="hero-amp">&amp;</span>
-      Jaime
-    </h1>
+    <h1 class="hero-names">María &amp; Jaime</h1>
     <p class="hero-date" data-i18n="hero.date">Sábado · 7 de Noviembre de 2026</p>
-    <p class="hero-loc" data-i18n="hero.loc">Pamplona, Navarra · España</p>
-    <div class="hero-scroll" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})">
-      <div class="scroll-bar"></div>
-      <span data-i18n="hero.scroll">Scroll</span>
+    <p class="hero-loc"  data-i18n="hero.loc">Pamplona, Navarra · España</p>
+    <a href="/rsvp.html" class="btn btn--primary" data-i18n="hero.rsvp">Confirmar asistencia</a>
+  </div>
+  <div class="hero-scroll" data-i18n="hero.scroll">Scroll</div>
+</section>
+
+<!-- ── COUNTDOWN ─────────────────────────────────────────────── -->
+<section id="countdown">
+  <div class="container">
+    <div class="cd-wrap">
+      <span class="cd-label" data-i18n="cd.label">Cuenta atrás para el gran día</span>
+      <div class="cd-units">
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-days">00</span>
+          <span class="cd-name" data-i18n="cd.days">Días</span>
+        </div>
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-hours">00</span>
+          <span class="cd-name" data-i18n="cd.hours">Horas</span>
+        </div>
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-mins">00</span>
+          <span class="cd-name" data-i18n="cd.mins">Minutos</span>
+        </div>
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-secs">00</span>
+          <span class="cd-name" data-i18n="cd.secs">Segundos</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════
-     COUNTDOWN
-════════════════════════════════════ -->
-<div id="countdown">
-  <p class="cd-label" data-i18n="cd.label">Cuenta atrás para el gran día</p>
-  <div class="cd-row">
-    <div class="cd-box">
-      <span class="cd-num" id="cd-d">—</span>
-      <p class="cd-unit" data-i18n="cd.days">Días</p>
+<!-- ── INVITATION ────────────────────────────────────────────── -->
+<section id="invitation" class="section-pad">
+  <div class="container">
+    <div class="inv-inner reveal">
+      <span class="eyebrow" data-i18n="inv.eyebrow">La Invitación</span>
+      <div class="divider divider--center"></div>
+      <p class="inv-families" data-i18n="inv.family1">Vicente de los Ríos Medina y Leticia Eva Mouvet Cañete</p>
+      <span class="inv-junto" data-i18n="inv.junto">junto con</span>
+      <p class="inv-families" data-i18n="inv.family2">Rafael Francisco Cortijo Gorraiz y María Elena Rojo Barrios</p>
+      <p class="inv-text" data-i18n="inv.text">participan el enlace matrimonial de sus hijos y tienen el gusto de invitaros a la ceremonia religiosa que se celebrará, D.m., el sábado 7 de noviembre de 2026, a las doce y media de la mañana, en la Iglesia de San Nicolás de Pamplona, y a la celebración que tendrá lugar a continuación en la Finca El Peregrino de Puente la Reina.</p>
+      <span class="inv-src" data-i18n="inv.src">S.R.C. · Pamplona, 2026</span>
     </div>
-    <div class="cd-box">
-      <span class="cd-num" id="cd-h">—</span>
-      <p class="cd-unit" data-i18n="cd.hours">Horas</p>
-    </div>
-    <div class="cd-box">
-      <span class="cd-num" id="cd-m">—</span>
-      <p class="cd-unit" data-i18n="cd.mins">Minutos</p>
-    </div>
-    <div class="cd-box">
-      <span class="cd-num" id="cd-s">—</span>
-      <p class="cd-unit" data-i18n="cd.secs">Segundos</p>
+  </div>
+</section>
+
+<!-- ── BLOCK 1: PRE-BODA ──────────────────────────────────────── -->
+<div class="event-block">
+  <div class="event-block__image">
+    <img src="/images/MJ 3.jpg" alt="El Encierro de los Enamorados" loading="lazy" />
+  </div>
+  <div class="event-block__content reveal">
+    <span class="eyebrow" data-i18n="ev.pre.eyebrow">Viernes · 6 de Noviembre de 2026</span>
+    <h2 class="section-title" data-i18n="ev.pre.title">El Encierro de los Enamorados</h2>
+    <div class="divider"></div>
+    <p data-i18n="ev.pre.desc">El día antes de la boda os invitamos a recorrer las legendarias calles del encierro de los San Fermines.</p>
+    <div class="event-block__meta">
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Hora</span>
+        <span data-i18n="ev.pre.when">17:00 h</span>
+      </div>
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Lugar</span>
+        <span data-i18n="ev.pre.where">Casco Antiguo de Pamplona</span>
+      </div>
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Ruta</span>
+        <span data-i18n="ev.pre.route">Santo Domingo → Plaza de Toros</span>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════
-     LA INVITACIÓN  (formal, from PPTX)
-════════════════════════════════════ -->
-<section id="invitation" class="section">
-  <div class="inner--narrow text-center">
-    <span class="eyebrow reveal" data-i18n="inv.eyebrow">La Invitación</span>
-    <div class="divider reveal"></div>
-
-    <p class="inv-parents reveal">
-      <span class="inv-family" data-i18n="inv.family1">Vicente de los Ríos Medina y Leticia Eva Mouvet Cañete</span>
-    </p>
-    <p class="inv-junto reveal" data-i18n="inv.junto">junto con</p>
-    <p class="inv-parents reveal">
-      <span class="inv-family" data-i18n="inv.family2">Rafael Francisco Cortijo Gorraiz y María Elena Rojo Barrios</span>
-    </p>
-
-    <p class="inv-text reveal reveal-d2" data-i18n="inv.text">
-      participan el enlace matrimonial de sus hijos y tienen el gusto de invitaros
-      a la ceremonia religiosa que se celebrará, D.m., el sábado 7 de noviembre de 2026,
-      a las doce y media de la mañana, en la Iglesia de San Nicolás de Pamplona,
-      y a la celebración que tendrá lugar a continuación en la Finca El Peregrino de Puente la Reina.
-    </p>
-
-    <p class="inv-src reveal reveal-d3" data-i18n="inv.src">S.R.C. · Pamplona, 2026</p>
+<!-- ── BLOCK 2: CEREMONY ─────────────────────────────────────── -->
+<div class="event-block event-block--reverse">
+  <div class="event-block__image">
+    <img src="/images/MJ 1.jpg" alt="Iglesia de San Nicolás" loading="lazy" />
   </div>
-</section>
-
-<!-- ════════════════════════════════════
-     OUR STORY
-════════════════════════════════════ -->
-<section id="story" class="section">
-  <div class="inner text-center">
-    <p class="eyebrow reveal" data-i18n="story.eyebrow">Nuestra Historia</p>
-    <h2 class="section-title reveal reveal-d1" data-i18n-html="story.title">
-      Una historia de <em>amor</em>
-    </h2>
-    <div class="divider reveal reveal-d2"></div>
-
-    <p class="story-copy reveal reveal-d2" data-i18n="story.p1">
-      Hay historias que empiezan sin avisar — con una mirada, una risa compartida,
-      o un momento que ninguno de los dos había planeado. La nuestra es así.
-      De los días ordinarios que se fueron convirtiendo en algo extraordinario,
-      de Nueva York a Pamplona, de Miami a las playas del atardecer.
-    </p>
-    <p class="story-copy reveal reveal-d3" data-i18n="story.p2">
-      Ahora, rodeados de las personas que más queremos, estamos listos para
-      empezar el capítulo más bonito. No podemos esperar a celebrarlo con vosotros
-      en el corazón de Navarra.
-    </p>
-  </div>
-
-  <!-- Photo gallery -->
-  <div class="inner--wide" style="margin-top: 56px;">
-    <div class="gallery-wrap reveal">
-      <div class="gallery-strip" id="galleryStrip">
-        <img src="/images/MJ%205.jpg" alt="María y Jaime al atardecer"    class="clickable" data-idx="0" />
-        <img src="/images/MJ%202.jpg" alt="María y Jaime en la graduación" class="clickable" data-idx="1" />
-        <img src="/images/MJ%203.jpg" alt="María y Jaime en San Fermines"  class="clickable" data-idx="2" />
-        <img src="/images/MJ%201.jpg" alt="María y Jaime en Miami"         class="clickable" data-idx="3" />
-        <img src="/images/MJ%204.jpg" alt="María y Jaime en la playa"      class="clickable" data-idx="4" />
+  <div class="event-block__content event-block__content--dark reveal">
+    <span class="eyebrow" data-i18n="ev.cer.eyebrow">Sábado · 7 de Noviembre de 2026</span>
+    <h2 class="section-title section-title--white" data-i18n="ev.cer.title">La Ceremonia</h2>
+    <div class="divider"></div>
+    <p data-i18n="ev.cer.desc">La ceremonia religiosa se celebrará en la Iglesia de San Nicolás, en el corazón del casco histórico de Pamplona.</p>
+    <div class="event-block__meta">
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Hora</span>
+        <span data-i18n="ev.cer.when">12:30 h (puertas 12:00)</span>
+      </div>
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Iglesia</span>
+        <span data-i18n="ev.cer.where">Iglesia de San Nicolás</span>
+      </div>
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Dirección</span>
+        <span data-i18n="ev.cer.addr">C/ San Miguel 15, Pamplona</span>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ════════════════════════════════════
-     EVENTS
-════════════════════════════════════ -->
-<section id="events">
-  <div class="events-header">
-    <p class="eyebrow reveal" data-i18n="events.eyebrow">Dos días de celebración</p>
-    <h2 class="section-title reveal reveal-d1" data-i18n-html="events.title">El <em>Fin de Semana</em></h2>
-    <div class="divider reveal reveal-d2"></div>
+<!-- ── BLOCK 3: CELEBRATION ──────────────────────────────────── -->
+<div class="event-block">
+  <div class="event-block__image">
+    <img src="/images/MJ 4.jpg" alt="Finca El Peregrino" loading="lazy" />
   </div>
-
-  <div class="events-cards">
-    <!-- Card 1: Pre-boda -->
-    <div class="ev-card reveal">
-      <div class="ev-bg" style="background-image: url('/images/MJ%203.jpg')"></div>
-      <div class="ev-overlay"></div>
-      <div class="ev-body">
-        <span class="ev-tag"  data-i18n="ev1.tag">Viernes, 6 de Noviembre de 2026 · Pre-Boda</span>
-        <h3  class="ev-title" data-i18n="ev1.title">El Encierro de los Enamorados</h3>
-        <p   class="ev-desc"  data-i18n="ev1.desc">
-          El día antes de la boda os invitamos a recorrer las legendarias calles
-          del encierro de los San Fermines. Una experiencia única para comenzar
-          la celebración al estilo pamplonés.
-        </p>
-        <div class="ev-route">
-          <span class="ev-stop">Santo Domingo</span>
-          <span class="ev-stop">Ayuntamiento</span>
-          <span class="ev-stop">Mercaderes</span>
-          <span class="ev-stop">Estafeta</span>
-          <span class="ev-stop">Callejón</span>
-          <span class="ev-stop">Plaza de Toros</span>
-        </div>
+  <div class="event-block__content reveal">
+    <span class="eyebrow" data-i18n="ev.cel.eyebrow">Sábado · 7 de Noviembre de 2026</span>
+    <h2 class="section-title" data-i18n="ev.cel.title">La Celebración</h2>
+    <div class="divider"></div>
+    <p data-i18n="ev.cel.desc">Tras la ceremonia, nos trasladaremos en autobús a la Finca El Peregrino, donde celebraremos el almuerzo nupcial.</p>
+    <div class="event-block__meta">
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Hora</span>
+        <span data-i18n="ev.cel.when">15:30 h (llegada)</span>
+      </div>
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Finca</span>
+        <span data-i18n="ev.cel.where">Finca El Peregrino</span>
+      </div>
+      <div class="event-block__meta-item">
+        <span class="event-block__meta-label">Dirección</span>
+        <span data-i18n="ev.cel.addr">Puente la Reina, Navarra (20 km)</span>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Card 2: Wedding day -->
-    <div class="ev-card reveal reveal-d2">
-      <div class="ev-bg" style="background-image: url('/images/MJ%202.jpg')"></div>
-      <div class="ev-overlay"></div>
-      <div class="ev-body">
-        <span class="ev-tag"  data-i18n="ev2.tag">Sábado, 7 de Noviembre de 2026 · La Boda</span>
-        <h3  class="ev-title" data-i18n="ev2.title">El Gran Día</h3>
-        <p   class="ev-desc"  data-i18n="ev2.desc">
-          La ceremonia se celebrará en la Iglesia de San Nicolás, en el casco antiguo
-          de Pamplona, seguida de una gran celebración en La Finca El Peregrino,
-          en Puente la Reina.
-        </p>
-        <div class="ev-route">
-          <span class="ev-stop" data-i18n="ev2.stop1">Iglesia de San Nicolás</span>
-          <span class="ev-stop" data-i18n="ev2.stop2">Cóctel</span>
-          <span class="ev-stop" data-i18n="ev2.stop3">La Finca El Peregrino</span>
-          <span class="ev-stop" data-i18n="ev2.stop4">Baile hasta el amanecer</span>
+<!-- ── OUR STORY ──────────────────────────────────────────────── -->
+<section id="story" class="section-pad">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <span class="eyebrow reveal" data-i18n="story.eyebrow">Nuestra Historia</span>
+        <h2 class="section-title reveal reveal-d1" data-i18n="story.title">Una historia de <em>amor</em></h2>
+        <div class="divider reveal reveal-d2"></div>
+        <p class="reveal reveal-d2" data-i18n="story.p1">Hay historias que empiezan sin avisar — con una mirada, una risa compartida, o un momento que ninguno de los dos había planeado. La nuestra es así.</p>
+        <p class="reveal reveal-d3" data-i18n="story.p2">De los días ordinarios que se fueron convirtiendo en algo extraordinario, de Nueva York a Pamplona, de Miami a las playas del atardecer. Cada ciudad, una página más de algo que ninguno de los dos esperaba escribir.</p>
+        <p class="reveal reveal-d4" data-i18n="story.p3">Ahora, rodeados de las personas que más queremos, estamos listos para empezar el capítulo más bonito. No podemos esperar a celebrarlo con vosotros en el corazón de Navarra.</p>
+      </div>
+      <div class="story-gallery-wrap reveal reveal-d2">
+        <div class="story-gallery">
+          <img src="/images/MJ 5.jpg" alt="María y Jaime" loading="lazy" />
+          <img src="/images/MJ 2.jpg" alt="María y Jaime" loading="lazy" />
+          <img src="/images/MJ 3.jpg" alt="María y Jaime" loading="lazy" />
+          <img src="/images/MJ 1.jpg" alt="María y Jaime" loading="lazy" />
+          <img src="/images/MJ 4.jpg" alt="María y Jaime" loading="lazy" />
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════
-     CEREMONY  (San Nicolás)
-════════════════════════════════════ -->
-<section id="ceremony" class="section">
-  <div class="inner--wide">
-    <div class="split-section">
-
-      <div class="split-photo reveal">
-        <img src="/images/MJ%201.jpg" alt="María y Jaime frente a una iglesia" />
-      </div>
-
-      <div class="split-text reveal reveal-d2">
-        <span class="eyebrow"   data-i18n="cer.eyebrow">La Ceremonia</span>
-        <h2 class="section-title" data-i18n-html="cer.title">Iglesia de <em>San Nicolás</em></h2>
-        <div class="divider divider--left"></div>
-
-        <p class="body-text" style="margin-bottom: 28px;" data-i18n="cer.desc">
-          Nos daremos el "sí quiero" en la hermosa Iglesia de San Nicolás de Bari,
-          uno de los templos más antiguos e icónicos del casco viejo de Pamplona.
-          Una joya románica del siglo XIII que abrirá sus puertas para nuestra celebración.
-        </p>
-
-        <div class="venue-items">
-          <div class="venue-item">
-            <span class="venue-item-icon">📍</span>
-            <div>
-              <span class="venue-item-label" data-i18n="cer.addr.label">Dirección</span>
-              <span class="venue-item-val"   data-i18n="cer.addr.val">Calle de San Miguel, 15, 31001 Pamplona, Navarra</span>
-            </div>
-          </div>
-          <div class="venue-item">
-            <span class="venue-item-icon">🕧</span>
-            <div>
-              <span class="venue-item-label" data-i18n="cer.time.label">Hora</span>
-              <span class="venue-item-val"   data-i18n="cer.time.val">12:30 — Las puertas abren a las 12:00</span>
-            </div>
-          </div>
-          <div class="venue-item">
-            <span class="venue-item-icon">📸</span>
-            <div>
-              <span class="venue-item-label" data-i18n="cer.photo.label">Ceremonia sin móviles</span>
-              <span class="venue-item-val"   data-i18n="cer.photo.val">Os pedimos que durante el intercambio de votos guardéis el teléfono. ¡El fotógrafo lo capturará todo!</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="https://maps.google.com/?q=Calle+de+San+Miguel+15+Pamplona"
-           target="_blank" rel="noopener" class="map-link">
-          ↗ &nbsp;<span data-i18n="cer.map">Ver en Google Maps</span>
-        </a>
-      </div>
-    </div>
+<!-- ── WEEKEND STRIP ─────────────────────────────────────────── -->
+<section id="weekend-strip">
+  <div class="container">
+    <span class="eyebrow reveal" data-i18n="ws.eyebrow">Dos días de celebración</span>
+    <h2 class="section-title section-title--white reveal reveal-d1" data-i18n="ws.title">El <em>Fin de Semana</em></h2>
+    <p class="reveal reveal-d2" data-i18n="ws.desc">Hemos preparado un fin de semana completo: desde el encierro del viernes hasta la última copa del sábado.</p>
+    <a href="/finde.html" class="btn btn--outline-white reveal reveal-d3" data-i18n="ws.btn">Ver el programa</a>
   </div>
 </section>
 
-<!-- ════════════════════════════════════
-     RECEPTION  (La Finca El Peregrino)
-════════════════════════════════════ -->
-<section id="reception" class="section">
-  <div class="inner--wide">
-    <div class="split-section flip">
-
-      <div class="split-photo reveal">
-        <img src="/images/MJ%204.jpg" alt="María y Jaime al atardecer en la playa" />
-      </div>
-
-      <div class="split-text reveal reveal-d2">
-        <span class="eyebrow"    data-i18n="rec.eyebrow">La Celebración</span>
-        <h2 class="section-title" data-i18n-html="rec.title">La Finca <em>El Peregrino</em></h2>
-        <div class="divider divider--left"></div>
-
-        <p class="body-text" style="margin-bottom: 28px;" data-i18n="rec.desc">
-          Tras la ceremonia, la fiesta continúa en La Finca El Peregrino,
-          una espectacular finca en Puente la Reina, a 20 km de Pamplona,
-          rodeada de la naturaleza navarra. El escenario perfecto para una boda de otoño
-          con cocina de autor y baile hasta el amanecer.
-        </p>
-
-        <div class="venue-items">
-          <div class="venue-item">
-            <span class="venue-item-icon">📍</span>
-            <div>
-              <span class="venue-item-label" data-i18n="rec.addr.label">Dirección</span>
-              <span class="venue-item-val"   data-i18n="rec.addr.val">C. Irunbidea, 47, 31100 Puente la Reina, Navarra</span>
-            </div>
-          </div>
-          <div class="venue-item">
-            <span class="venue-item-icon">🕒</span>
-            <div>
-              <span class="venue-item-label" data-i18n="rec.time.label">Hora de llegada</span>
-              <span class="venue-item-val"   data-i18n="rec.time.val">15:00 · Autobuses organizados desde Pamplona</span>
-            </div>
-          </div>
-          <div class="venue-item">
-            <span class="venue-item-icon">🌲</span>
-            <div>
-              <span class="venue-item-label" data-i18n="rec.env.label">Entorno</span>
-              <span class="venue-item-val"   data-i18n="rec.env.val">Finca privada con jardines, salón y terraza exterior</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="https://maps.google.com/?q=C.+Irunbidea+47+Puente+la+Reina+Navarra"
-           target="_blank" rel="noopener" class="map-link">
-          ↗ &nbsp;<span data-i18n="rec.map">Ver en Google Maps</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════
-     SCHEDULE
-════════════════════════════════════ -->
-<section id="schedule" class="section">
-  <div class="inner text-center">
-    <span class="eyebrow reveal"   data-i18n="sched.eyebrow">El Programa</span>
-    <h2 class="section-title reveal reveal-d1" data-i18n-html="sched.title">Dos días <em>perfectos</em></h2>
-    <div class="divider reveal reveal-d2"></div>
-
-    <!-- FRIDAY -->
-    <p class="sched-day reveal" data-i18n="sched.fri">Viernes 6 de Noviembre — Pre-Boda</p>
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <span class="tl-time">17:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.fri.1.event">Punto de encuentro</p>
-          <p class="tl-desc"  data-i18n="tl.fri.1.desc">Plaza del Castillo, Pamplona</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">17:30</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.fri.2.event">El Encierro de los Enamorados</p>
-          <p class="tl-desc"  data-i18n="tl.fri.2.desc">Recorrido por las calles de los San Fermines</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">19:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.fri.3.event">Aperitivos en el casco viejo</p>
-          <p class="tl-desc"  data-i18n="tl.fri.3.desc">Pintxos y vino en los bares del centro histórico</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">21:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.fri.4.event">Cena de Pre-Boda</p>
-          <p class="tl-desc"  data-i18n="tl.fri.4.desc">Restaurante por confirmar · ¡Seguid atentos!</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SATURDAY -->
-    <p class="sched-day reveal" style="margin-top: 60px;" data-i18n="sched.sat">Sábado 7 de Noviembre — La Boda</p>
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <span class="tl-time">12:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.1.event">Llegada de los invitados</p>
-          <p class="tl-desc"  data-i18n="tl.sat.1.desc">Iglesia de San Nicolás, Pamplona</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">12:30</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.2.event">Ceremonia</p>
-          <p class="tl-desc"  data-i18n="tl.sat.2.desc">Intercambio de votos y anillos</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">13:30</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.3.event">Cóctel</p>
-          <p class="tl-desc"  data-i18n="tl.sat.3.desc">Cava y canapés · Pamplona</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">15:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.4.event">Traslado a La Finca El Peregrino</p>
-          <p class="tl-desc"  data-i18n="tl.sat.4.desc">Autobuses organizados · Puente la Reina</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">15:30</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.5.event">Almuerzo nupcial</p>
-          <p class="tl-desc"  data-i18n="tl.sat.5.desc">Gran Salón · La Finca El Peregrino</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">19:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.6.event">Tarta y brindis</p>
-          <p class="tl-desc"  data-i18n="tl.sat.6.desc">Discursos y champagne</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">20:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.7.event">Baile y fiesta</p>
-          <p class="tl-desc"  data-i18n="tl.sat.7.desc">Primer baile · Música hasta el amanecer</p>
-        </div>
-      </div>
-      <div class="tl-item">
-        <span class="tl-time">00:00</span>
-        <div class="tl-dot"></div>
-        <div class="tl-info">
-          <p class="tl-event" data-i18n="tl.sat.8.event">Último baile</p>
-          <p class="tl-desc"  data-i18n="tl.sat.8.desc">Una noche que nunca olvidaremos</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════
-     TRAVEL
-════════════════════════════════════ -->
-<section id="travel" class="section">
-  <div class="inner--wide">
-    <div class="text-center">
-      <span class="eyebrow reveal" data-i18n="travel.eyebrow">Cómo Llegar</span>
-      <h2 class="section-title reveal reveal-d1" data-i18n-html="travel.title">Viaje &amp; <em>Alojamiento</em></h2>
-      <div class="divider reveal reveal-d2"></div>
-      <p class="body-text reveal reveal-d2" style="max-width:580px; margin: 0 auto;" data-i18n="travel.intro">
-        Pamplona está muy bien comunicada con el resto de España y Europa.
-        La Finca El Peregrino se encuentra en Puente la Reina, a tan sólo 20 km.
-      </p>
-    </div>
-    <div class="travel-grid" style="margin-top: 52px;">
-      <div class="travel-card reveal">
-        <span class="travel-icon">✈️</span>
-        <h3 class="travel-title" data-i18n="travel.air.title">En Avión</h3>
-        <p class="travel-text"  data-i18n="travel.air.text">
-          El aeropuerto más cercano es Pamplona (PNA), a 7 km del centro.
-          También puedes llegar a Bilbao (BIO) o Madrid (MAD)
-          y continuar en tren o coche de alquiler.
-        </p>
-      </div>
-      <div class="travel-card reveal reveal-d1">
-        <span class="travel-icon">🚂</span>
-        <h3 class="travel-title" data-i18n="travel.train.title">En Tren</h3>
-        <p class="travel-text"  data-i18n="travel.train.text">
-          Renfe conecta Pamplona con Madrid, Zaragoza y San Sebastián.
-          La estación de Pamplona-Iruña está en el centro, a 10 minutos andando del casco viejo.
-        </p>
-      </div>
-      <div class="travel-card reveal reveal-d2">
-        <span class="travel-icon">🚌</span>
-        <h3 class="travel-title" data-i18n="travel.bus.title">Autobús de la Boda</h3>
-        <p class="travel-text"  data-i18n="travel.bus.text">
-          Se pondrá a disposición de los invitados un servicio de autobús
-          de ida y vuelta entre Pamplona y La Finca El Peregrino.
-          Se ruega confirmación de utilización en el RSVP.
-        </p>
-      </div>
-      <div class="travel-card reveal reveal-d3">
-        <span class="travel-icon">🏨</span>
-        <h3 class="travel-title" data-i18n="travel.hotel.title">Dónde Dormir</h3>
-        <p class="travel-text"  data-i18n="travel.hotel.text">
-          Recomendamos el casco antiguo de Pamplona.
-          Algunas opciones: Gran Hotel La Perla, Hotel NH Collection
-          y Palacio Guendulain. ¡Reservad con antelación!
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════
-     FAQ
-════════════════════════════════════ -->
-<section id="faq" class="section">
-  <div class="inner">
-    <div class="text-center">
+<!-- ── FAQ ───────────────────────────────────────────────────── -->
+<section id="faq" class="section-pad">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:56px;">
       <span class="eyebrow reveal" data-i18n="faq.eyebrow">Preguntas Frecuentes</span>
-      <h2 class="section-title reveal reveal-d1" data-i18n-html="faq.title">¿Tienes <em>dudas</em>?</h2>
-      <div class="divider reveal reveal-d2"></div>
+      <h2 class="section-title reveal reveal-d1" data-i18n="faq.title">Todo lo que necesitas saber</h2>
+      <div class="divider divider--center reveal reveal-d2"></div>
     </div>
-
-    <div class="faq-list reveal">
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q1">¿La boda es para adultos o también para niños?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a1">
-            Aunque adoramos a vuestros peques, hemos decidido que sea una celebración
-            solo para adultos para que todos podáis disfrutar al máximo de la noche.
-            Os pedimos que organicéis a alguien para cuidarlos ese día.
-          </p>
-        </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="faq.q1">¿Es una celebración solo para adultos?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a1">Sí, hemos decidido que sea una celebración exclusiva para adultos. Agradecemos vuestra comprensión.</p></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q2">¿Hay servicio de autobús?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a2">
-            Sí. Se pondrá a disposición de los invitados un servicio de autobús de ida y vuelta
-            entre Pamplona y La Finca El Peregrino (Puente la Reina). Os pedimos que confirmad
-            vuestra asistencia y si utilizaréis el autobús en el formulario de RSVP.
-          </p>
-        </div>
+      <div class="faq-item reveal reveal-d1">
+        <button class="faq-q"><span data-i18n="faq.q2">¿Habrá autobús de regreso a Pamplona?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a2">Sí, organizaremos un servicio de autobús gratuito de ida y vuelta entre el centro de Pamplona y la Finca El Peregrino.</p></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q3">¿Hay código de vestimenta?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a3">
-            El código de vestimenta es Black Tie Opcional — elegante y formal es bienvenido.
-            Tened en cuenta que el casco viejo de Pamplona tiene adoquines, así que si venís
-            en tacones, unos de bloque o cuña os lo agradecerán vuestros pies.
-            Por favor, evitad el blanco, el marfil y el crema por respeto a la novia.
-          </p>
-        </div>
+      <div class="faq-item reveal reveal-d2">
+        <button class="faq-q"><span data-i18n="faq.q3">¿Cuál es el código de vestimenta?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a3">Black Tie Opcional — Tenemos en cuenta que el casco antiguo de Pamplona tiene adoquines, así que os recomendamos elegir el calzado con cuidado.</p></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q4">¿Puedo hacer fotos durante la ceremonia?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a4">
-            La ceremonia será "unplugged" — os pedimos que guardéis el móvil y la cámara
-            mientras intercambiamos los votos. Nuestros fotógrafos captarán cada momento.
-            ¡En el cóctel y la fiesta, a disparar!
-          </p>
-        </div>
+      <div class="faq-item reveal reveal-d3">
+        <button class="faq-q"><span data-i18n="faq.q4">¿Será una ceremonia "unplugged"?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a4">Durante el intercambio de votos y alianzas os pediremos que guardéis los móviles para que podáis vivir el momento plenamente.</p></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q5">¿Hay opciones para vegetarianos o alergias?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a5">
-            Por supuesto. Por favor indicadlo en vuestro RSVP y nos aseguraremos de que
-            tengáis opciones adaptadas. El equipo de catering está acostumbrado a trabajar
-            con todo tipo de dietas y alergias.
-          </p>
-        </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="faq.q5">¿Podéis atender restricciones alimentarias?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a5">Por supuesto. Al confirmar asistencia, indicad cualquier alergia o restricción dietética.</p></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q6">¿Hasta cuándo puedo confirmar asistencia?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a6">
-            Os pedimos que confirmáis antes del 1 de septiembre de 2026
-            para poder cerrar números con el caterer y la finca.
-          </p>
-        </div>
+      <div class="faq-item reveal reveal-d1">
+        <button class="faq-q"><span data-i18n="faq.q6">¿Cuándo hay que confirmar asistencia?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a6">Os pedimos que confirmáis antes del 1 de septiembre de 2026.</p></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger">
-          <span data-i18n="faq.q7">¿Tenéis lista de boda?</span>
-          <span class="faq-plus">+</span>
-        </button>
-        <div class="faq-panel">
-          <p class="faq-panel-inner" data-i18n="faq.a7">
-            Nuestro mayor regalo es vuestra presencia. Pero si queréis podéis
-            ayudarnos a empezar nuestra historia:
-            <br /><br />
-            <strong>ES59 1583 0001 1591 0591 4514</strong>
-          </p>
-        </div>
+      <div class="faq-item reveal reveal-d2">
+        <button class="faq-q"><span data-i18n="faq.q7">¿Tenéis lista de bodas?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p data-i18n="faq.a7">El mejor regalo es vuestra presencia. Si aun así queréis contribuir, tenéis los datos bancarios en la sección "Regalo".</p></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════
-     RSVP
-════════════════════════════════════ -->
-<section id="rsvp">
-  <span class="eyebrow"    data-i18n="rsvp.eyebrow">Confirma tu Asistencia</span>
-  <h2 class="section-title">RSVP</h2>
-  <div class="divider"></div>
-  <p class="rsvp-sub" data-i18n="rsvp.sub">
-    Confirma antes del 1 de septiembre de 2026.<br />
-    No podemos esperar a celebrarlo contigo.
-  </p>
-
-  <form class="rsvp-form" id="rsvpForm">
-    <div class="form-row">
-      <div class="form-grp">
-        <label class="form-lbl" for="firstName" data-i18n="rsvp.fname">Nombre</label>
-        <input class="form-ctrl" type="text" id="firstName" name="firstName"
-               placeholder="María" data-i18n-placeholder="rsvp.fname.ph" required />
-      </div>
-      <div class="form-grp">
-        <label class="form-lbl" for="lastName" data-i18n="rsvp.lname">Apellido</label>
-        <input class="form-ctrl" type="text" id="lastName" name="lastName"
-               placeholder="García" data-i18n-placeholder="rsvp.lname.ph" />
-      </div>
-    </div>
-    <div class="form-grp">
-      <label class="form-lbl" for="email" data-i18n="rsvp.email">Email</label>
-      <input class="form-ctrl" type="email" id="email" name="email"
-             placeholder="tu@correo.com" data-i18n-placeholder="rsvp.email.ph" required />
-    </div>
-    <div class="form-grp">
-      <label class="form-lbl" for="attending" data-i18n="rsvp.attending">¿Asistirás?</label>
-      <select class="form-ctrl" id="attending" name="attending" required>
-        <option value="" disabled selected data-i18n="rsvp.attending.ph">Selecciona una opción…</option>
-        <option value="yes" data-i18n="rsvp.yes">¡Con mucho gusto, allí estaré!</option>
-        <option value="no"  data-i18n="rsvp.no">Lo siento, no podré asistir</option>
-      </select>
-    </div>
-    <div class="form-grp">
-      <label class="form-lbl" for="guests" data-i18n="rsvp.guests">Número de personas (incluido tú)</label>
-      <select class="form-ctrl" id="guests" name="guests">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-    </div>
-    <div class="form-grp">
-      <label class="form-lbl" for="preboda" data-i18n="rsvp.preboda">¿Vendrás a la Pre-Boda del viernes?</label>
-      <select class="form-ctrl" id="preboda" name="preboda">
-        <option value="yes" data-i18n="rsvp.preboda.yes">Sí, ¡apuntado!</option>
-        <option value="no"  data-i18n="rsvp.preboda.no">No podré, llegaré el sábado</option>
-      </select>
-    </div>
-    <div class="form-grp">
-      <label class="form-lbl" for="bus" data-i18n="rsvp.bus">¿Utilizarás el autobús de la boda?</label>
-      <select class="form-ctrl" id="bus" name="bus">
-        <option value="yes" data-i18n="rsvp.bus.yes">Sí, utilizaré el autobús</option>
-        <option value="no"  data-i18n="rsvp.bus.no">No, vendré por mi cuenta</option>
-      </select>
-    </div>
-    <div class="form-grp">
-      <label class="form-lbl" for="dietary" data-i18n="rsvp.dietary">Alergias o requisitos alimentarios</label>
-      <textarea class="form-ctrl" id="dietary" name="dietary"
-                placeholder="Vegetariano, sin gluten, alergias…"
-                data-i18n-placeholder="rsvp.dietary.ph"></textarea>
-    </div>
-    <button type="submit" class="btn-rsvp" id="rsvpBtn" data-i18n="rsvp.submit">Confirmar asistencia</button>
-  </form>
-
-  <div class="rsvp-msg" id="rsvpMsg" data-i18n="rsvp.thanks">
-    ¡Gracias! No podemos esperar a celebrarlo contigo. ✦
-  </div>
-</section>
-
-<!-- ════════════════════════════════════
-     FOOTER
-════════════════════════════════════ -->
-<footer>
-  <p class="footer-names">María &amp; Jaime</p>
-  <p class="footer-date" data-i18n="footer.date">7 · Noviembre · 2026 · Pamplona, España</p>
-  <div class="footer-divider"></div>
-  <p class="footer-note" data-i18n="footer.note">Hecho con amor para las personas que más queremos.</p>
-</footer>
-
-<!-- ════════════════════════════════════
-     LIGHTBOX
-════════════════════════════════════ -->
+<!-- ── LIGHTBOX ───────────────────────────────────────────────── -->
 <div id="lightbox">
-  <button class="lb-btn lb-close" id="lbClose">✕</button>
-  <button class="lb-btn lb-prev"  id="lbPrev">‹</button>
-  <img id="lb-img" src="" alt="Foto ampliada" />
-  <button class="lb-btn lb-next"  id="lbNext">›</button>
+  <button class="lb-close">✕</button>
+  <button class="lb-prev">&#8592;</button>
+  <img src="" alt="Foto" />
+  <button class="lb-next">&#8594;</button>
 </div>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-names">María &amp; Jaime</div>
+    <div class="footer-date" data-i18n="footer.date">7 · Noviembre · 2026 · Pamplona, España</div>
+    <div class="footer-contacts">
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact1.label">María — WhatsApp</span>
+        <a href="https://wa.me/34620000376" class="footer-contact-phone">620 000 376</a>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact2.label">Jaime — WhatsApp</span>
+        <a href="https://wa.me/34682898196" class="footer-contact-phone">682 898 196</a>
+      </div>
+    </div>
+    <p class="footer-note" data-i18n="footer.note">Hecho con amor para las personas que más queremos</p>
+  </div>
+</footer>
 
 <script src="/main.js"></script>
 </body>

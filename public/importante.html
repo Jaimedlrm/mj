@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Información · María &amp; Jaime · 7 Noviembre 2026</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav id="nav">
+  <a href="/index.html" class="nav-logo">M &amp; J</a>
+  <ul class="nav-links">
+    <li><a href="/index.html"        data-i18n="nav.home">Inicio</a></li>
+    <li><a href="/importante.html"   class="active" data-i18n="nav.importante">Información</a></li>
+    <li><a href="/restaurantes.html" data-i18n="nav.restaurantes">Restaurantes</a></li>
+    <li><a href="/turismo.html"      data-i18n="nav.turismo">Turismo</a></li>
+    <li><a href="/rsvp.html"         data-i18n="nav.rsvp">RSVP</a></li>
+    <li><a href="/regalo.html"       data-i18n="nav.regalo">Regalo</a></li>
+    <li><a href="/finde.html"        data-i18n="nav.finde">El Finde</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="nav-burger" id="burgerBtn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu">
+  <button class="mobile-close" id="menuClose">✕</button>
+  <a href="/index.html"        class="m-link" data-i18n="nav.home">Inicio</a>
+  <a href="/importante.html"   class="m-link active" data-i18n="nav.importante">Información</a>
+  <a href="/restaurantes.html" class="m-link" data-i18n="nav.restaurantes">Restaurantes</a>
+  <a href="/turismo.html"      class="m-link" data-i18n="nav.turismo">Turismo</a>
+  <a href="/rsvp.html"         class="m-link" data-i18n="nav.rsvp">RSVP</a>
+  <a href="/regalo.html"       class="m-link" data-i18n="nav.regalo">Regalo</a>
+  <a href="/finde.html"        class="m-link" data-i18n="nav.finde">El Finde</a>
+  <div class="lang-toggle lang-toggle--mobile">
+    <button class="lang-btn active" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__eyebrow" data-i18n="imp.eyebrow">Información Práctica</span>
+    <h1 class="page-hero__title" data-i18n="imp.title">Todo lo que necesitas</h1>
+    <p class="page-hero__sub" data-i18n="imp.sub">Pamplona, 7 de Noviembre de 2026</p>
+  </div>
+</section>
+
+<!-- ── TAB NAV ───────────────────────────────────────────────── -->
+<div style="background: var(--cream);">
+  <div class="container">
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="alojamiento" data-i18n="imp.tab1">Alojamiento</button>
+      <button class="tab-btn" data-tab="peluquerias"   data-i18n="imp.tab2">Peluquerías</button>
+      <button class="tab-btn" data-tab="maquillaje"    data-i18n="imp.tab3">Maquillaje</button>
+      <button class="tab-btn" data-tab="restaurantes"  data-i18n="imp.tab4">Restaurantes</button>
+    </nav>
+  </div>
+</div>
+
+<!-- ── CONTENT ───────────────────────────────────────────────── -->
+<main style="background: var(--cream); padding-bottom: 100px;">
+  <div class="container">
+
+    <!-- ALOJAMIENTO -->
+    <div class="tab-section active" id="alojamiento">
+      <p class="intro-text reveal" data-i18n="imp.hotels.intro">Hemos seleccionado una serie de hoteles en el centro de Pamplona. Os recomendamos reservar con antelación.</p>
+      <div class="cards-grid">
+
+        <div class="card reveal">
+          <div class="card__body">
+            <span class="card__label">Hotel · 5★</span>
+            <h3 class="card__title">Gran Hotel La Perla</h3>
+            <p class="card__desc">El hotel más emblemático de Pamplona, en plena Plaza del Castillo. Donde se alojó Hemingway. Historia, lujo y ubicación inmejorable.</p>
+            <div class="card__meta">📍 Plaza del Castillo, 1 · Pamplona</div>
+            <a href="https://www.granhotellaperla.com" target="_blank" rel="noopener" class="card__link">Reservar →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d1">
+          <div class="card__body">
+            <span class="card__label">Hotel · 4★</span>
+            <h3 class="card__title">NH Collection Palacio de Navarra</h3>
+            <p class="card__desc">Elegante hotel en el Palacio de Navarra, a pocos minutos del casco antiguo. Moderno, céntrico y con excelentes instalaciones.</p>
+            <div class="card__meta">📍 C/ Amaya, 9 · Pamplona</div>
+            <a href="https://www.nh-hotels.com" target="_blank" rel="noopener" class="card__link">Reservar →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d2">
+          <div class="card__body">
+            <span class="card__label">Hotel · 5★</span>
+            <h3 class="card__title">Palacio Guendulain</h3>
+            <p class="card__desc">Palacio del siglo XVIII convertido en hotel boutique. En pleno casco histórico, con una atmósfera única y refinada.</p>
+            <div class="card__meta">📍 C/ Zapatería, 53 · Pamplona</div>
+            <a href="https://www.palacioguendulain.com" target="_blank" rel="noopener" class="card__link">Reservar →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d3">
+          <div class="card__body">
+            <span class="card__label">Hotel · 4★</span>
+            <h3 class="card__title">Hotel Maisonnave</h3>
+            <p class="card__desc">Situado en el corazón del casco viejo, muy cerca de la Plaza del Castillo. Excelente relación calidad-precio.</p>
+            <div class="card__meta">📍 C/ Nueva, 20 · Pamplona</div>
+            <a href="https://www.hotelmaisonnave.es" target="_blank" rel="noopener" class="card__link">Reservar →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PELUQUERÍAS -->
+    <div class="tab-section" id="peluquerias">
+      <p class="intro-text reveal" data-i18n="imp.pelus.intro">Si buscáis peluquería para el gran día, aquí tenéis una selección de los salones mejor valorados de Pamplona.</p>
+      <div class="cards-grid">
+
+        <div class="card reveal">
+          <div class="card__body">
+            <span class="card__label">Peluquería · ★★★★★</span>
+            <h3 class="card__title">Nerea Etxeberria</h3>
+            <p class="card__desc">Especialista en peinados de novia y eventos. Amplia experiencia en bodas y celebraciones. Muy recomendada por su trabajo en recogidos y ondas.</p>
+            <div class="card__meta">📍 C/ Mercaderes, 8 · Pamplona</div>
+            <div class="card__meta">📞 948 220 134</div>
+            <a href="https://maps.google.com/?q=Nerea+Etxeberria+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d1">
+          <div class="card__body">
+            <span class="card__label">Peluquería · ★★★★★</span>
+            <h3 class="card__title">Salón Loren</h3>
+            <p class="card__desc">Referente en Pamplona para peluquería y estilismo nupcial. Trato personalizado y resultados impecables para el gran día.</p>
+            <div class="card__meta">📍 C/ San Nicolás, 5 · Pamplona</div>
+            <div class="card__meta">📞 948 221 650</div>
+            <a href="https://maps.google.com/?q=Salon+Loren+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d2">
+          <div class="card__body">
+            <span class="card__label">Peluquería · ★★★★☆</span>
+            <h3 class="card__title">Aitor &amp; Sonia Hair</h3>
+            <p class="card__desc">Studio de peluquería creativa con gran reputación en peinados para bodas y eventos especiales en el centro de Pamplona.</p>
+            <div class="card__meta">📍 C/ Estafeta, 18 · Pamplona</div>
+            <div class="card__meta">📞 948 225 900</div>
+            <a href="https://maps.google.com/?q=Estafeta+18+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d3">
+          <div class="card__body">
+            <span class="card__label">Peluquería · ★★★★☆</span>
+            <h3 class="card__title">The Hair Lab</h3>
+            <p class="card__desc">Espacio moderno y con estilo, especializado en novias y looks para celebraciones. Reservas online disponibles.</p>
+            <div class="card__meta">📍 Av. de Baja Navarra, 47 · Pamplona</div>
+            <div class="card__meta">📞 948 240 110</div>
+            <a href="https://maps.google.com/?q=Av+Baja+Navarra+47+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MAQUILLAJE -->
+    <div class="tab-section" id="maquillaje">
+      <p class="intro-text reveal" data-i18n="imp.makeup.intro">Algunas recomendaciones de maquillaje profesional en Pamplona y alrededores.</p>
+      <div class="cards-grid">
+
+        <div class="card reveal">
+          <div class="card__body">
+            <span class="card__label">Maquillaje · Novia</span>
+            <h3 class="card__title">Lucía Olcoz Make Up</h3>
+            <p class="card__desc">Maquilladora profesional especializada en novias. Estilo natural y duradero. Trabaja con las mejores marcas y ofrece prueba previa.</p>
+            <div class="card__meta">📍 Pamplona</div>
+            <div class="card__meta">📷 @luciaolcoz_makeup</div>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="card__link">Ver Instagram →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d1">
+          <div class="card__body">
+            <span class="card__label">Maquillaje · Eventos</span>
+            <h3 class="card__title">Amaia Berastegi</h3>
+            <p class="card__desc">Artista de maquillaje con más de 10 años de experiencia en bodas y eventos de alta gama en Navarra. Resultado duradero y fotogénico.</p>
+            <div class="card__meta">📍 Pamplona y alrededores</div>
+            <div class="card__meta">📷 @amaia_mua</div>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="card__link">Ver Instagram →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d2">
+          <div class="card__body">
+            <span class="card__label">Maquillaje · Studio</span>
+            <h3 class="card__title">Noelia García Beauty</h3>
+            <p class="card__desc">Studio de belleza integral en Pamplona. Maquillaje nupcial, manicura y tratamientos de belleza para el gran día.</p>
+            <div class="card__meta">📍 C/ Mayor, 22 · Pamplona</div>
+            <div class="card__meta">📞 948 230 445</div>
+            <a href="https://maps.google.com/?q=C+Mayor+22+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESTAURANTES (mini) -->
+    <div class="tab-section" id="restaurantes">
+      <p class="intro-text reveal" data-i18n="imp.rest.intro">Un adelanto de nuestros lugares favoritos en Pamplona.</p>
+      <div class="cards-grid">
+
+        <div class="card reveal">
+          <div class="card__body">
+            <span class="card__label">Pintxos Bar</span>
+            <h3 class="card__title">Gaucho</h3>
+            <p class="card__desc">Uno de los bares de pintxos más conocidos de Pamplona. Ambiente inmejorable y pintxos de primera.</p>
+            <div class="card__meta">📍 C/ Espoz y Mina, 7 · Pamplona</div>
+            <a href="https://maps.google.com/?q=Bar+Gaucho+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d1">
+          <div class="card__body">
+            <span class="card__label">Bar · Pintxos</span>
+            <h3 class="card__title">Café 3</h3>
+            <p class="card__desc">Local clásico con una amplia selección de pintxos y raciones. Muy popular entre locales y visitantes.</p>
+            <div class="card__meta">📍 C/ Estafeta, 32 · Pamplona</div>
+            <a href="https://maps.google.com/?q=Cafe+3+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+        <div class="card reveal reveal-d2">
+          <div class="card__body">
+            <span class="card__label">Bar Tradicional</span>
+            <h3 class="card__title">Bar Zapata</h3>
+            <p class="card__desc">Bar tradicional pamplonés con pintxos caseros y un ambiente genuino del casco antiguo.</p>
+            <div class="card__meta">📍 C/ San Nicolás, 31 · Pamplona</div>
+            <a href="https://maps.google.com/?q=Bar+Zapata+Pamplona" target="_blank" rel="noopener" class="card__link">Ver en Maps →</a>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center; margin-top:48px;">
+        <a href="/restaurantes.html" class="btn btn--outline" data-i18n="imp.rest.link">Ver todos los restaurantes →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-names">María &amp; Jaime</div>
+    <div class="footer-date" data-i18n="footer.date">7 · Noviembre · 2026 · Pamplona, España</div>
+    <div class="footer-contacts">
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact1.label">María — WhatsApp</span>
+        <a href="https://wa.me/34620000376" class="footer-contact-phone">620 000 376</a>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-label" data-i18n="footer.contact2.label">Jaime — WhatsApp</span>
+        <a href="https://wa.me/34682898196" class="footer-contact-phone">682 898 196</a>
+      </div>
+    </div>
+    <p class="footer-note" data-i18n="footer.note">Hecho con amor para las personas que más queremos</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
